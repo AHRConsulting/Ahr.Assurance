@@ -1,0 +1,48 @@
+<Project>
+  <PropertyGroup>
+    <BaseTargetFramework>net10.0</BaseTargetFramework>
+    <TargetFramework>$(BaseTargetFramework)</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Deterministic>true</Deterministic>
+    <ContinuousIntegrationBuild Condition="'$(CI)' == 'true'">true</ContinuousIntegrationBuild>
+    <AnalysisLevel>latest-recommended</AnalysisLevel>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <NoWarn>$(NoWarn);CA1000;CA1716;IDE0130;CS1591</NoWarn>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AhrAssuranceVersion Condition="'$(AhrAssuranceVersion)' == ''">0.1.0</AhrAssuranceVersion>
+    <Version>$(AhrAssuranceVersion)</Version>
+    <Authors>AHR Consulting</Authors>
+    <Company>AHR Consulting</Company>
+    <Product>AHR Assurance</Product>
+    <Copyright>Copyright © 2026 AHR Consulting</Copyright>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <IsPackable>false</IsPackable>
+    <PackageProjectUrl>https://ahrconsulting.github.io/assurance/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/AHRConsulting/Ahr.Assurance</RepositoryUrl>
+    <PackageReleaseNotes>https://github.com/AHRConsulting/Ahr.Assurance/blob/main/CHANGELOG.md</PackageReleaseNotes>
+    <RepositoryType>git</RepositoryType>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageTags>testing;assurance;business;bdd;evidence;reporting</PackageTags>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(IsPackable)' == 'true' And Exists('$(MSBuildProjectDirectory)/PACKAGE.md')">
+    <None Include="$(MSBuildProjectDirectory)/PACKAGE.md" Pack="true" PackagePath="README.md" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(IsPackable)' == 'true'">
+    <None Include="$(MSBuildThisFileDirectory)assets/icon.png" Pack="true" PackagePath="/" Visible="false" />
+  </ItemGroup>
+  <PropertyGroup Condition="Exists('$(MSBuildProjectDirectory)/PACKAGE.md')">
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+</Project>

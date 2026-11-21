@@ -1,0 +1,4 @@
+{
+  // Names the report of the whole solution. Each test project has its own config.
+  "report": { "title": "AHR Assurance", "version": "0.1.0" }
+}

@@ -1,0 +1,13 @@
+# Copied to tests/.editorconfig and samples/.editorconfig, layered on the root dotnet.editorconfig.
+
+[*.cs]
+# NUnit and MSTest need public test classes.
+dotnet_diagnostic.CA1515.severity = none
+# Test code has no synchronisation context to avoid.
+dotnet_diagnostic.CA2007.severity = none
+# Test methods are found by reflection and stay instance members.
+dotnet_diagnostic.CA1822.severity = none
+# Sonar's version of CA1822, which turning off CA1822 doesn't silence.
+dotnet_diagnostic.S2325.severity = none
+# Tests use ! to state what they've already asserted.
+dotnet_diagnostic.IDE0370.severity = none

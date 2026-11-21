@@ -1,0 +1,12 @@
+#nullable enable
+Ahr.Assurance.TUnit.AssuranceAssert
+Ahr.Assurance.TUnit.AssuranceTUnitConfiguration
+Ahr.Assurance.TUnit.InlineScenarioExtensions
+Ahr.Assurance.TUnit.ScenarioVerificationExtensions
+static Ahr.Assurance.TUnit.AssuranceAssert.VerifyAsync<TContext>(string! name, System.Collections.Generic.IEnumerable<Ahr.Assurance.Execution.Scenario<TContext>!>! scenarios, Ahr.Assurance.Reporting.ReportOptions! reportOptions) -> System.Threading.Tasks.Task<Ahr.Assurance.Reporting.AssuranceVerificationResult!>!
+static Ahr.Assurance.TUnit.AssuranceAssert.VerifyAsync<TContext>(string! name, System.Collections.Generic.IEnumerable<Ahr.Assurance.Execution.Scenario<TContext>!>! scenarios) -> System.Threading.Tasks.Task<Ahr.Assurance.Reporting.AssuranceVerificationResult!>!
+static Ahr.Assurance.TUnit.AssuranceTUnitConfiguration.ConfigureDefault(Ahr.Assurance.Reporting.ReportOptions! reportOptions) -> void
+static Ahr.Assurance.TUnit.InlineScenarioExtensions.VerifyAsync(this Ahr.Assurance.Execution.Scenario! scenario, Ahr.Assurance.Reporting.ReportOptions! reportOptions) -> System.Threading.Tasks.Task<Ahr.Assurance.Reporting.AssuranceVerificationResult!>!
+static Ahr.Assurance.TUnit.InlineScenarioExtensions.VerifyAsync(this Ahr.Assurance.Execution.Scenario! scenario) -> System.Threading.Tasks.Task<Ahr.Assurance.Reporting.AssuranceVerificationResult!>!
+static Ahr.Assurance.TUnit.ScenarioVerificationExtensions.VerifyAsync<TContext>(this Ahr.Assurance.Execution.Scenario<TContext>! scenario, Ahr.Assurance.Reporting.ReportOptions! reportOptions) -> System.Threading.Tasks.Task<Ahr.Assurance.Reporting.AssuranceVerificationResult!>!
+static Ahr.Assurance.TUnit.ScenarioVerificationExtensions.VerifyAsync<TContext>(this Ahr.Assurance.Execution.Scenario<TContext>! scenario) -> System.Threading.Tasks.Task<Ahr.Assurance.Reporting.AssuranceVerificationResult!>!

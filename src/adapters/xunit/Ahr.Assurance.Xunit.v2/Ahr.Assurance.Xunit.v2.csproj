@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- The xUnit v2 adapter. Tests pass their ITestOutputHelper, which carries the test.
+       It depends only on xunit.abstractions, which every xUnit v2 version shares. -->
+  <PropertyGroup>
+    <IsPackable>true</IsPackable>
+    <RootNamespace>Ahr.Assurance.Xunit</RootNamespace>
+    <Description>xUnit v2 adapter for Ahr.Assurance: named Given/When/Then steps over ordinary xUnit v2 tests, with evidence linked to business outcomes, rules and risks.</Description>
+    <NoWarn>$(NoWarn);RS0026;RS0027</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="Ahr.Assurance.Xunit.v2.Tests" />
+    <ProjectReference Include="../../../Ahr.Assurance/Ahr.Assurance.csproj" />
+    <PackageReference Include="xunit.abstractions" VersionOverride="2.0.3" />
+    <PackageReference Include="Microsoft.CodeAnalysis.PublicApiAnalyzers" PrivateAssets="all" />
+    <AdditionalFiles Include="PublicAPI.Shipped.txt" />
+    <AdditionalFiles Include="PublicAPI.Unshipped.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="buildTransitive/Ahr.Assurance.Xunit.v2.targets" Pack="true" PackagePath="buildTransitive/" />
+    <!-- The Microsoft.Testing.Platform extension, built for each platform major version. -->
+    <ProjectReference Include="../../../Ahr.Assurance.TestingPlatform/v1/Ahr.Assurance.TestingPlatform.v1.csproj" ReferenceOutputAssembly="false" PrivateAssets="all" />
+    <ProjectReference Include="../../../Ahr.Assurance.TestingPlatform/v2/Ahr.Assurance.TestingPlatform.v2.csproj" ReferenceOutputAssembly="false" PrivateAssets="all" />
+    <None Include="../../../Ahr.Assurance.TestingPlatform/Ahr.Assurance.TestingPlatform.targets" Pack="true" PackagePath="buildTransitive/" Visible="false" />
+    <None Include="../../../Ahr.Assurance.TestingPlatform/bin/$(Configuration)/v1/Ahr.Assurance.TestingPlatform.dll" Pack="true" PackagePath="buildTransitive/platform/v1/" Visible="false" />
+    <None Include="../../../Ahr.Assurance.TestingPlatform/bin/$(Configuration)/v2/Ahr.Assurance.TestingPlatform.dll" Pack="true" PackagePath="buildTransitive/platform/v2/" Visible="false" />
+  </ItemGroup>
+</Project>

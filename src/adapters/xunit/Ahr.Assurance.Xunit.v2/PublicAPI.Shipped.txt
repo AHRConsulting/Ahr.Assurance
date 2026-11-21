@@ -1,0 +1,12 @@
+#nullable enable
+Ahr.Assurance.Xunit.AssuranceAssert
+Ahr.Assurance.Xunit.AssuranceXunitConfiguration
+Ahr.Assurance.Xunit.InlineScenarioExtensions
+Ahr.Assurance.Xunit.ScenarioVerificationExtensions
+static Ahr.Assurance.Xunit.AssuranceAssert.VerifyAsync<TContext>(string! name, System.Collections.Generic.IEnumerable<Ahr.Assurance.Execution.Scenario<TContext>!>! scenarios, Xunit.Abstractions.ITestOutputHelper! output) -> System.Threading.Tasks.Task<Ahr.Assurance.Reporting.AssuranceVerificationResult!>!
+static Ahr.Assurance.Xunit.AssuranceAssert.VerifyAsync<TContext>(string! name, System.Collections.Generic.IEnumerable<Ahr.Assurance.Execution.Scenario<TContext>!>! scenarios, Xunit.Abstractions.ITestOutputHelper! output, Ahr.Assurance.Reporting.ReportOptions! reportOptions) -> System.Threading.Tasks.Task<Ahr.Assurance.Reporting.AssuranceVerificationResult!>!
+static Ahr.Assurance.Xunit.AssuranceXunitConfiguration.ConfigureDefault(Ahr.Assurance.Reporting.ReportOptions! reportOptions) -> void
+static Ahr.Assurance.Xunit.InlineScenarioExtensions.VerifyAsync(this Ahr.Assurance.Execution.Scenario! scenario, Xunit.Abstractions.ITestOutputHelper! output) -> System.Threading.Tasks.Task<Ahr.Assurance.Reporting.AssuranceVerificationResult!>!
+static Ahr.Assurance.Xunit.InlineScenarioExtensions.VerifyAsync(this Ahr.Assurance.Execution.Scenario! scenario, Xunit.Abstractions.ITestOutputHelper! output, Ahr.Assurance.Reporting.ReportOptions! reportOptions) -> System.Threading.Tasks.Task<Ahr.Assurance.Reporting.AssuranceVerificationResult!>!
+static Ahr.Assurance.Xunit.ScenarioVerificationExtensions.VerifyAsync<TContext>(this Ahr.Assurance.Execution.Scenario<TContext>! scenario, Xunit.Abstractions.ITestOutputHelper! output) -> System.Threading.Tasks.Task<Ahr.Assurance.Reporting.AssuranceVerificationResult!>!
+static Ahr.Assurance.Xunit.ScenarioVerificationExtensions.VerifyAsync<TContext>(this Ahr.Assurance.Execution.Scenario<TContext>! scenario, Xunit.Abstractions.ITestOutputHelper! output, Ahr.Assurance.Reporting.ReportOptions! reportOptions) -> System.Threading.Tasks.Task<Ahr.Assurance.Reporting.AssuranceVerificationResult!>!

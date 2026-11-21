@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- The Microsoft.Testing.Platform 2.x extension, built against the oldest 2.x it compiles with. The adapter packages carry both builds. -->
+  <PropertyGroup>
+    <AssemblyName>Ahr.Assurance.TestingPlatform</AssemblyName>
+    <RootNamespace>Ahr.Assurance.TestingPlatform</RootNamespace>
+    <!-- The same layout as the packages' platform folder. -->
+    <OutputPath>../bin/$(Configuration)/v2/</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <NoWarn>$(NoWarn);RS0026;RS0027</NoWarn>
+    
+  </PropertyGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="Ahr.Assurance.Xunit.v3.Tests" />
+    <ProjectReference Include="../../Ahr.Assurance/Ahr.Assurance.csproj" />
+    <PackageReference Include="Microsoft.Testing.Platform" VersionOverride="2.0.0" IncludeAssets="compile" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.CodeAnalysis.PublicApiAnalyzers" PrivateAssets="all" />
+    <Compile Include="../*.cs" />
+    <AdditionalFiles Include="../PublicAPI.Shipped.txt" />
+    <AdditionalFiles Include="../PublicAPI.Unshipped.txt" />
+  </ItemGroup>
+</Project>

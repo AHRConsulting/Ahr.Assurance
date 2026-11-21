@@ -1,0 +1,3 @@
+#nullable enable
+Ahr.Assurance.TestingPlatform.TestingPlatformBuilderHook
+static Ahr.Assurance.TestingPlatform.TestingPlatformBuilderHook.AddExtensions(Microsoft.Testing.Platform.Builder.ITestApplicationBuilder! builder, string![]! arguments) -> void

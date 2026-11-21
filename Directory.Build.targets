@@ -1,0 +1,7 @@
+<Project>
+  <!-- Every package documents its public API. -->
+  <PropertyGroup Condition="'$(IsPackable)' == 'true'">
+    <NoWarn>$(NoWarn.Replace(';CS1591', ''))</NoWarn>
+    <MSBuildWarningsAsMessages>$(MSBuildWarningsAsMessages.Replace(';CS1591', ''))</MSBuildWarningsAsMessages>
+  </PropertyGroup>
+</Project>

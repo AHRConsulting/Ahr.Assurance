@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <PackAsTool>true</PackAsTool>
+    <IsPackable>true</IsPackable>
+    <ToolCommandName>dotnet-assurance</ToolCommandName>
+    <PublishAot>true</PublishAot>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <RollForward>Major</RollForward>
+    <RestorePackagesWithLockFile>false</RestorePackagesWithLockFile>
+    <PackageId>Ahr.Assurance.Cli</PackageId>
+    <Description>The dotnet assurance command: offline business assurance reports from test evidence, for a project's newest run or a whole solution.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="System.CommandLine" />
+    <ProjectReference Include="../Ahr.Assurance.Cli.Core/Ahr.Assurance.Cli.Core.csproj" />
+  </ItemGroup>
+</Project>

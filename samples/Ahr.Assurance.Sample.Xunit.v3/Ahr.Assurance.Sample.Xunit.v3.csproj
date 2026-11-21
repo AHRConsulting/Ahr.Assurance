@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <IsTestProject>true</IsTestProject>
+    <TestingPlatformDotnetTestSupport>true</TestingPlatformDotnetTestSupport>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="xunit.v3" />
+    <PackageReference Include="Microsoft.Testing.Extensions.TrxReport" />
+    <PackageReference Include="Ahr.Assurance.Xunit.v3" />
+    <ProjectReference Include="../Ahr.Assurance.Sample.Core/Ahr.Assurance.Sample.Core.csproj" />
+    <Using Include="Xunit" />
+  </ItemGroup>
+</Project>

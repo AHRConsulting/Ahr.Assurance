@@ -1,0 +1,31 @@
+<Project>
+  <!-- Registers the extension that records each Microsoft.Testing.Platform test run and, when asked, writes its report.
+       The package carries a build of the extension for platform 1.x and one for 2.x, and this references the one that matches
+       the platform version the project resolved. Projects without the platform, such as VSTest projects, get neither.
+       Set AhrAssuranceTestingPlatform to false to leave it out. Every adapter package carries this file, and it runs once. -->
+  <PropertyGroup>
+    <AhrAssuranceTestingPlatformDirectory Condition="'$(AhrAssuranceTestingPlatformDirectory)' == ''">$(MSBuildThisFileDirectory)platform/</AhrAssuranceTestingPlatformDirectory>
+  </PropertyGroup>
+  <Target Name="_AhrAssuranceTestingPlatformExtension" AfterTargets="ResolveAssemblyReferences" Condition="'$(AhrAssuranceTestingPlatform)' != 'false'">
+    <ItemGroup>
+      <_AhrAssurancePlatformReference Include="@(ReferencePath)" Condition="'%(Filename)' == 'Microsoft.Testing.Platform'" />
+    </ItemGroup>
+    <PropertyGroup>
+      <_AhrAssurancePlatformVersion>@(_AhrAssurancePlatformReference->'%(NuGetPackageVersion)')</_AhrAssurancePlatformVersion>
+      <_AhrAssurancePlatformBuild />
+      <_AhrAssurancePlatformBuild Condition="'$(_AhrAssurancePlatformVersion)' != '' And $([MSBuild]::VersionGreaterThanOrEquals('$(_AhrAssurancePlatformVersion)', '1.0.0')) And $([MSBuild]::VersionLessThan('$(_AhrAssurancePlatformVersion)', '2.0.0'))">v1</_AhrAssurancePlatformBuild>
+      <_AhrAssurancePlatformBuild Condition="'$(_AhrAssurancePlatformVersion)' != '' And $([MSBuild]::VersionGreaterThanOrEquals('$(_AhrAssurancePlatformVersion)', '2.0.0')) And $([MSBuild]::VersionLessThan('$(_AhrAssurancePlatformVersion)', '3.0.0'))">v2</_AhrAssurancePlatformBuild>
+      <_AhrAssurancePlatformAssembly>$([MSBuild]::EnsureTrailingSlash('$(AhrAssuranceTestingPlatformDirectory)'))$(_AhrAssurancePlatformBuild)/Ahr.Assurance.TestingPlatform.dll</_AhrAssurancePlatformAssembly>
+    </PropertyGroup>
+    <Message Importance="high" Condition="'$(_AhrAssurancePlatformVersion)' != '' And '$(_AhrAssurancePlatformBuild)' == ''"
+             Text="Ahr.Assurance: Microsoft.Testing.Platform $(_AhrAssurancePlatformVersion) isn't supported yet, so the report isn't written when the test run ends. Run 'dotnet assurance report' after the tests." />
+    <ItemGroup Condition="'$(_AhrAssurancePlatformBuild)' != ''">
+      <ReferencePath Include="$(_AhrAssurancePlatformAssembly)" CopyLocal="true" ReferenceSourceTarget="ResolveAssemblyReference" />
+      <ReferenceCopyLocalPaths Include="$(_AhrAssurancePlatformAssembly)" />
+      <TestingPlatformBuilderHook Include="9C4B7E21-6A3D-4F58-B2E9-1D7A0C5E8F36">
+        <DisplayName>Ahr.Assurance</DisplayName>
+        <TypeFullName>Ahr.Assurance.TestingPlatform.TestingPlatformBuilderHook</TypeFullName>
+      </TestingPlatformBuilderHook>
+    </ItemGroup>
+  </Target>
+</Project>

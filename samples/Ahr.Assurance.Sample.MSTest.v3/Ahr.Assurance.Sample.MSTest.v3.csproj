@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <IsTestProject>true</IsTestProject>
+    <EnableMSTestRunner>true</EnableMSTestRunner>
+    <TestingPlatformDotnetTestSupport>true</TestingPlatformDotnetTestSupport>
+    <CentralPackageTransitivePinningEnabled>false</CentralPackageTransitivePinningEnabled>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="MSTest" VersionOverride="3.11.1" />
+    <PackageReference Include="Ahr.Assurance.MSTest.v3" />
+    <ProjectReference Include="../Ahr.Assurance.Sample.Core/Ahr.Assurance.Sample.Core.csproj" />
+  </ItemGroup>
+</Project>

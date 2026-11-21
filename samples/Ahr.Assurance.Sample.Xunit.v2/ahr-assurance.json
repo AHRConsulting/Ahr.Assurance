@@ -1,0 +1,13 @@
+{
+  // Each test run gets its own folder in here, named by its run ID. Relative to this file.
+  "runs": "artifacts/assurance",
+  // Remove older run folders beyond the newest 20 when a run starts.
+  // "keep": 20,
+  // Inside each run folder.
+  "attachments": "attachments",
+  "report": {
+    "title": "Offline documents (xUnit v2)",
+    // Inside each run folder.
+    "output": "report"
+  }
+}

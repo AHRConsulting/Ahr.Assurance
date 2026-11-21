@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <IsPackable>true</IsPackable>
+    <Description>Playwright integration for Ahr.Assurance: screenshots and traces attached to each scenario step's evidence, under any test framework adapter.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="Ahr.Assurance.Playwright.Tests" />
+    <ProjectReference Include="../../../Ahr.Assurance/Ahr.Assurance.csproj" />
+    <PackageReference Include="Microsoft.Playwright" />
+    <PackageReference Include="Microsoft.CodeAnalysis.PublicApiAnalyzers" PrivateAssets="all" />
+    <AdditionalFiles Include="PublicAPI.Shipped.txt" />
+    <AdditionalFiles Include="PublicAPI.Unshipped.txt" />
+  </ItemGroup>
+</Project>

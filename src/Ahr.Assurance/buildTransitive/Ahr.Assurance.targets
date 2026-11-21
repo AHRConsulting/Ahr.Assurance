@@ -1,0 +1,17 @@
+<Project>
+  <!-- Finds ahr-assurance.json in the project folder or a parent folder and records its path in runtimeconfig.json.
+       A relative AhrAssuranceConfigFile is resolved against the project folder. -->
+  <PropertyGroup>
+    <AhrAssuranceConfigFile Condition="'$(AhrAssuranceConfigFile)' == ''">$([MSBuild]::GetPathOfFileAbove('ahr-assurance.json', '$(MSBuildProjectDirectory)'))</AhrAssuranceConfigFile>
+    <_AhrAssuranceConfigPath Condition="'$(AhrAssuranceConfigFile)' != ''">$([MSBuild]::NormalizePath('$(MSBuildProjectDirectory)', '$(AhrAssuranceConfigFile)'))</_AhrAssuranceConfigPath>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(_AhrAssuranceConfigPath)' != ''">
+    <RuntimeHostConfigurationOption Include="Ahr.Assurance.ConfigFile" Value="$(_AhrAssuranceConfigPath)" />
+  </ItemGroup>
+  <!-- Global usings for Ahr.Assurance's namespaces, in projects with implicit usings enabled.
+       Set AhrAssuranceImplicitUsings to false to leave them out. -->
+  <ItemGroup Condition="('$(ImplicitUsings)' == 'enable' Or '$(ImplicitUsings)' == 'true') And '$(AhrAssuranceImplicitUsings)' != 'false'">
+    <Using Include="Ahr.Assurance.Core" />
+    <Using Include="Ahr.Assurance.Execution" />
+  </ItemGroup>
+</Project>

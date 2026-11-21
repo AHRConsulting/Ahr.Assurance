@@ -1,0 +1,8 @@
+<Project>
+  <!-- A global using for the MSTest adapter's namespace, in projects with implicit usings enabled.
+       Set AhrAssuranceImplicitUsings to false to leave it out. -->
+  <ItemGroup Condition="('$(ImplicitUsings)' == 'enable' Or '$(ImplicitUsings)' == 'true') And '$(AhrAssuranceImplicitUsings)' != 'false'">
+    <Using Include="Ahr.Assurance.MSTest" />
+  </ItemGroup>
+  <Import Project="$(MSBuildThisFileDirectory)Ahr.Assurance.TestingPlatform.targets" Condition="Exists('$(MSBuildThisFileDirectory)Ahr.Assurance.TestingPlatform.targets')" />
+</Project>

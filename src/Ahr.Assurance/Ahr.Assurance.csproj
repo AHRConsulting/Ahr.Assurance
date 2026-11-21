@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <IsAotCompatible>false</IsAotCompatible>
+    <IsPackable>true</IsPackable>
+    <Description>Executable business assurance for .NET: link ordinary tests to business outcomes, rules and risks, and produce evidence.</Description>
+    <NoWarn>$(NoWarn);RS0026;RS0027</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Ahr.Foundation" />
+    <PackageReference Include="Microsoft.CodeAnalysis.PublicApiAnalyzers" PrivateAssets="all" />
+    <AdditionalFiles Include="PublicAPI.Shipped.txt" />
+    <AdditionalFiles Include="PublicAPI.Unshipped.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="buildTransitive/Ahr.Assurance.targets" Pack="true" PackagePath="buildTransitive/" />
+    <EmbeddedResource Include="../../assets/ahr.assurance.logo.svg" LogicalName="Ahr.Assurance.Logo.svg" Visible="false" />
+    <None Include="../../analyzers/Ahr.Assurance.Analyzers/bin/$(Configuration)/netstandard2.0/Ahr.Assurance.Analyzers.dll"
+          Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="**/obj/**/*.cs;**/bin/**/*.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../analyzers/Ahr.Assurance.Analyzers/Ahr.Assurance.Analyzers.csproj" ReferenceOutputAssembly="false" PrivateAssets="all" />
+  </ItemGroup>
+</Project>

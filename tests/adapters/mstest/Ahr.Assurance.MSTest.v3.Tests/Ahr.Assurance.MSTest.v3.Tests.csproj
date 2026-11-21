@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- The MSTest adapter's tests, run on MSTest 3 with Ahr.Assurance.MSTest.v3. -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <IsTestProject>true</IsTestProject>
+    <EnableMSTestRunner>true</EnableMSTestRunner>
+    <TestingPlatformDotnetTestSupport>true</TestingPlatformDotnetTestSupport>
+    <EnableNETAnalyzers>false</EnableNETAnalyzers>
+    <NoWarn>$(NoWarn);IDE0005;MSTESTEXP</NoWarn>
+    <DefineConstants>$(DefineConstants);MSTEST3</DefineConstants>
+    <!-- Resolve what an MSTest 3 project would. -->
+    <CentralPackageTransitivePinningEnabled>false</CentralPackageTransitivePinningEnabled>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="MSTest" VersionOverride="3.11.1" />
+    <ProjectReference Include="../../../../src/adapters/mstest/Ahr.Assurance.MSTest.v3/Ahr.Assurance.MSTest.v3.csproj" />
+    <ProjectReference Include="../../../Ahr.Assurance.Adapters.Conformance/Ahr.Assurance.Adapters.Conformance.csproj" />
+    <ProjectReference Include="../../../../analyzers/Ahr.Assurance.Analyzers/Ahr.Assurance.Analyzers.csproj" ReferenceOutputAssembly="false" OutputItemType="Analyzer" />
+    <Using Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
+    <Compile Include="../Ahr.Assurance.MSTest.Tests/*.cs" />
+  </ItemGroup>
+  <Import Project="../../../../src/Ahr.Assurance/buildTransitive/Ahr.Assurance.targets" />
+  <Import Project="../../../../src/adapters/mstest/Ahr.Assurance.MSTest.v3/buildTransitive/Ahr.Assurance.MSTest.v3.targets" />
+  <PropertyGroup>
+    <AhrAssuranceTestingPlatformDirectory>$(MSBuildThisFileDirectory)../../../../src/Ahr.Assurance.TestingPlatform/bin/$(Configuration)/</AhrAssuranceTestingPlatformDirectory>
+  </PropertyGroup>
+  <Import Project="../../../../src/Ahr.Assurance.TestingPlatform/Ahr.Assurance.TestingPlatform.targets" />
+</Project>

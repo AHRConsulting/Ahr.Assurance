@@ -1,0 +1,12 @@
+.DS_Store
+**/bin/
+**/obj/
+artifacts/
+TestResults/
+**/TestResults/
+.vs/
+*.user
+
+.idea/
+_site/
+api/

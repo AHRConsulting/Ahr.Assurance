@@ -1,0 +1,68 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Ahr.Assurance.Cli/Ahr.Assurance.Cli.csproj" />
+    <Project Path="src/Ahr.Assurance.Cli.Core/Ahr.Assurance.Cli.Core.csproj" />
+    <Project Path="src/Ahr.Assurance.TestingPlatform/v1/Ahr.Assurance.TestingPlatform.v1.csproj" />
+    <Project Path="src/Ahr.Assurance.TestingPlatform/v2/Ahr.Assurance.TestingPlatform.v2.csproj" />
+    <Project Path="src/Ahr.Assurance/Ahr.Assurance.csproj" />
+  </Folder>
+  <Folder Name="/analyzers/">
+    <Project Path="analyzers/Ahr.Assurance.Analyzers/Ahr.Assurance.Analyzers.csproj" />
+  </Folder>
+  <Folder Name="/src/adapters/mstest/">
+    <Project Path="src/adapters/mstest/Ahr.Assurance.MSTest.v3/Ahr.Assurance.MSTest.v3.csproj" />
+    <Project Path="src/adapters/mstest/Ahr.Assurance.MSTest/Ahr.Assurance.MSTest.csproj" />
+  </Folder>
+  <Folder Name="/tests/adapters/mstest/">
+    <Project Path="tests/adapters/mstest/Ahr.Assurance.MSTest.Tests/Ahr.Assurance.MSTest.Tests.csproj" />
+    <Project Path="tests/adapters/mstest/Ahr.Assurance.MSTest.v3.Tests/Ahr.Assurance.MSTest.v3.Tests.csproj" />
+  </Folder>
+  <Folder Name="/src/adapters/nunit/">
+    <Project Path="src/adapters/nunit/Ahr.Assurance.NUnit/Ahr.Assurance.NUnit.csproj" />
+  </Folder>
+  <Folder Name="/tests/adapters/nunit/">
+    <Project Path="tests/adapters/nunit/Ahr.Assurance.NUnit.Tests/Ahr.Assurance.NUnit.Tests.csproj" />
+    <Project Path="tests/adapters/nunit/Ahr.Assurance.NUnit3.Tests/Ahr.Assurance.NUnit3.Tests.csproj" />
+    <Project Path="tests/adapters/nunit/Ahr.Assurance.NUnit5.Tests/Ahr.Assurance.NUnit5.Tests.csproj" />
+  </Folder>
+  <Folder Name="/src/adapters/playwright/">
+    <Project Path="src/adapters/playwright/Ahr.Assurance.Playwright/Ahr.Assurance.Playwright.csproj" />
+  </Folder>
+  <Folder Name="/tests/adapters/playwright/">
+    <Project Path="tests/adapters/playwright/Ahr.Assurance.Playwright.Tests/Ahr.Assurance.Playwright.Tests.csproj" />
+  </Folder>
+  <Folder Name="/src/adapters/tunit/">
+    <Project Path="src/adapters/tunit/Ahr.Assurance.TUnit/Ahr.Assurance.TUnit.csproj" />
+  </Folder>
+  <Folder Name="/tests/adapters/tunit/">
+    <Project Path="tests/adapters/tunit/Ahr.Assurance.TUnit.Tests/Ahr.Assurance.TUnit.Tests.csproj" />
+  </Folder>
+  <Folder Name="/src/adapters/xunit/">
+    <Project Path="src/adapters/xunit/Ahr.Assurance.Xunit.v2/Ahr.Assurance.Xunit.v2.csproj" />
+    <Project Path="src/adapters/xunit/Ahr.Assurance.Xunit.v3/Ahr.Assurance.Xunit.v3.csproj" />
+  </Folder>
+  <Folder Name="/tests/adapters/xunit/">
+    <Project Path="tests/adapters/xunit/Ahr.Assurance.Xunit.v3.Tests/Ahr.Assurance.Xunit.v3.Tests.csproj" />
+    <Project Path="tests/adapters/xunit/Ahr.Assurance.Xunit.v2.Tests/Ahr.Assurance.Xunit.v2.Tests.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Ahr.Assurance.Adapters.Conformance/Ahr.Assurance.Adapters.Conformance.csproj" />
+    <Project Path="tests/Ahr.Assurance.Analyzers.Tests/Ahr.Assurance.Analyzers.Tests.csproj" />
+    <Project Path="tests/Ahr.Assurance.Cli.Tests/Ahr.Assurance.Cli.Tests.csproj" />
+    <Project Path="tests/Ahr.Assurance.Tests.Specifications/Ahr.Assurance.Tests.Specifications.csproj" />
+    <Project Path="tests/Ahr.Assurance.Tests/Ahr.Assurance.Tests.csproj" />
+  </Folder>
+  <Folder Name="/samples/">
+    <Project Path="samples/Ahr.Assurance.Sample.Core/Ahr.Assurance.Sample.Core.csproj" />
+    <Project Path="samples/Ahr.Assurance.Sample.MSTest/Ahr.Assurance.Sample.MSTest.csproj" />
+    <Project Path="samples/Ahr.Assurance.Sample.MSTest.v3/Ahr.Assurance.Sample.MSTest.v3.csproj" />
+    <Project Path="samples/Ahr.Assurance.Sample.NUnit/Ahr.Assurance.Sample.NUnit.csproj" />
+    <Project Path="samples/Ahr.Assurance.Sample.Playwright/Ahr.Assurance.Sample.Playwright.csproj" />
+    <Project Path="samples/Ahr.Assurance.Sample.TUnit/Ahr.Assurance.Sample.TUnit.csproj" />
+    <Project Path="samples/Ahr.Assurance.Sample.Xunit.v2/Ahr.Assurance.Sample.Xunit.v2.csproj" />
+    <Project Path="samples/Ahr.Assurance.Sample.Xunit.v3/Ahr.Assurance.Sample.Xunit.v3.csproj" />
+  </Folder>
+  <Folder Name="/benchmarks/">
+    <Project Path="benchmarks/Ahr.Assurance.Benchmarks/Ahr.Assurance.Benchmarks.csproj" />
+  </Folder>
+</Solution>

@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- The xUnit v2 adapter's tests, on xUnit 2.9 and VSTest. Run them with
+       dotnet vstest tests/adapters/xunit/Ahr.Assurance.Xunit.v2.Tests/bin/Release/net10.0/Ahr.Assurance.Xunit.v2.Tests.dll -->
+  <PropertyGroup>
+    <IsTestProject>false</IsTestProject>
+    <EnableNETAnalyzers>false</EnableNETAnalyzers>
+    <NoWarn>$(NoWarn);IDE0005</NoWarn>
+    <!-- Resolve what an xUnit v2 project would, not the repository's central pins. -->
+    <CentralPackageTransitivePinningEnabled>false</CentralPackageTransitivePinningEnabled>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" VersionOverride="18.12.0" />
+    <PackageReference Include="xunit" VersionOverride="2.9.3" />
+    <PackageReference Include="xunit.runner.visualstudio" VersionOverride="4.0.1" />
+    <PackageReference Include="Xunit.SkippableFact" VersionOverride="1.5.85" />
+    <ProjectReference Include="../../../../src/adapters/xunit/Ahr.Assurance.Xunit.v2/Ahr.Assurance.Xunit.v2.csproj" />
+    <ProjectReference Include="../../../Ahr.Assurance.Adapters.Conformance/Ahr.Assurance.Adapters.Conformance.csproj" />
+    <ProjectReference Include="../../../../analyzers/Ahr.Assurance.Analyzers/Ahr.Assurance.Analyzers.csproj" ReferenceOutputAssembly="false" OutputItemType="Analyzer" />
+    <Using Include="Xunit" />
+    <Using Include="Xunit.Abstractions" />
+  </ItemGroup>
+  <Import Project="../../../../src/Ahr.Assurance/buildTransitive/Ahr.Assurance.targets" />
+</Project>

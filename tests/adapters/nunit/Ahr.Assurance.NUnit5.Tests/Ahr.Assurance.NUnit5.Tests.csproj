@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- The NUnit adapter's tests, run on NUnit 5. -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <IsTestProject>true</IsTestProject>
+    <EnableNUnitRunner>true</EnableNUnitRunner>
+    <TestingPlatformDotnetTestSupport>true</TestingPlatformDotnetTestSupport>
+    <EnableNETAnalyzers>false</EnableNETAnalyzers>
+    <NoWarn>$(NoWarn);IDE0005</NoWarn>
+    <DefineConstants>$(DefineConstants);NUNIT5</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="NUnit" VersionOverride="5.0.0" />
+    <PackageReference Include="NUnit3TestAdapter" />
+    <PackageReference Include="Microsoft.Testing.Extensions.TrxReport" />
+    <ProjectReference Include="../../../../src/adapters/nunit/Ahr.Assurance.NUnit/Ahr.Assurance.NUnit.csproj" />
+    <ProjectReference Include="../../../Ahr.Assurance.Adapters.Conformance/Ahr.Assurance.Adapters.Conformance.csproj" />
+    <ProjectReference Include="../../../../analyzers/Ahr.Assurance.Analyzers/Ahr.Assurance.Analyzers.csproj" ReferenceOutputAssembly="false" OutputItemType="Analyzer" />
+    <Using Include="NUnit.Framework" />
+    <Compile Include="../Ahr.Assurance.NUnit.Tests/*.cs" />
+  </ItemGroup>
+  <Import Project="../../../../src/Ahr.Assurance/buildTransitive/Ahr.Assurance.targets" />
+  <Import Project="../../../../src/adapters/nunit/Ahr.Assurance.NUnit/buildTransitive/Ahr.Assurance.NUnit.targets" />
+  <PropertyGroup>
+    <AhrAssuranceTestingPlatformDirectory>$(MSBuildThisFileDirectory)../../../../src/Ahr.Assurance.TestingPlatform/bin/$(Configuration)/</AhrAssuranceTestingPlatformDirectory>
+  </PropertyGroup>
+  <Import Project="../../../../src/Ahr.Assurance.TestingPlatform/Ahr.Assurance.TestingPlatform.targets" />
+</Project>

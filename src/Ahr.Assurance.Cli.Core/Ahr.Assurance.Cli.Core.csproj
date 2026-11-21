@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <IsAotCompatible>true</IsAotCompatible>
+    <RootNamespace>Ahr.Assurance.Cli</RootNamespace>
+    <RestorePackagesWithLockFile>false</RestorePackagesWithLockFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../Ahr.Assurance/Ahr.Assurance.csproj" />
+    <PackageReference Include="Ahr.Foundation" />
+  </ItemGroup>
+</Project>

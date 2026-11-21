@@ -1,0 +1,8 @@
+{
+  "runs": "artifacts/assurance",
+  "keep": 5,
+  "report": {
+    "title": "Ahr.Assurance NUnit 3 adapter",
+    "output": "report"
+  }
+}

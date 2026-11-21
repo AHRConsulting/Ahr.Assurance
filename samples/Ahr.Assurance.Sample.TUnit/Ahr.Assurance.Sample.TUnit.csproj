@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <IsTestProject>true</IsTestProject>
+    <TestingPlatformDotnetTestSupport>true</TestingPlatformDotnetTestSupport>
+    <!-- TUnit's assertions return the value they checked, which these tests don't use. -->
+    <NoWarn>$(NoWarn);IDE0058</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="TUnit" />
+    <PackageReference Include="Ahr.Assurance.TUnit" />
+    <ProjectReference Include="../Ahr.Assurance.Sample.Core/Ahr.Assurance.Sample.Core.csproj" />
+  </ItemGroup>
+</Project>

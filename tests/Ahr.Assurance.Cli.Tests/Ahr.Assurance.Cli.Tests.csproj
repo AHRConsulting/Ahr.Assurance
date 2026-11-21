@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <IsTestProject>true</IsTestProject>
+    <TestingPlatformDotnetTestSupport>true</TestingPlatformDotnetTestSupport>
+    <EnableNETAnalyzers>false</EnableNETAnalyzers>
+    <NoWarn>$(NoWarn);AHRA001;IDE0005</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="xunit.v3" />
+    <PackageReference Include="Microsoft.Testing.Extensions.TrxReport" />
+    <ProjectReference Include="../../src/Ahr.Assurance.Cli/Ahr.Assurance.Cli.csproj" />
+    <ProjectReference Include="../../src/adapters/xunit/Ahr.Assurance.Xunit.v3/Ahr.Assurance.Xunit.v3.csproj" />
+    <!-- The analyzers, as the package brings them. -->
+    <ProjectReference Include="../../analyzers/Ahr.Assurance.Analyzers/Ahr.Assurance.Analyzers.csproj" ReferenceOutputAssembly="false" OutputItemType="Analyzer" />
+    <Using Include="Xunit" />
+    <Using Include="Ahr.Assurance.Tests" />
+    <Compile Include="../Shared/TestReports.cs" Link="TestReports.cs" />
+    <Content Include="../Ahr.Assurance.Tests/xunit.runner.json" Link="xunit.runner.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+  <Import Project="../../src/Ahr.Assurance/buildTransitive/Ahr.Assurance.targets" />
+  <Import Project="../../src/adapters/xunit/Ahr.Assurance.Xunit.v3/buildTransitive/Ahr.Assurance.Xunit.v3.targets" />
+  <PropertyGroup>
+    <AhrAssuranceTestingPlatformDirectory>$(MSBuildThisFileDirectory)../../src/Ahr.Assurance.TestingPlatform/bin/$(Configuration)/</AhrAssuranceTestingPlatformDirectory>
+  </PropertyGroup>
+  <Import Project="../../src/Ahr.Assurance.TestingPlatform/Ahr.Assurance.TestingPlatform.targets" />
+</Project>

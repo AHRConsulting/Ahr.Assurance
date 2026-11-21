@@ -1,0 +1,26 @@
+#nullable enable
+Ahr.Assurance.Playwright.AssurancePlaywright
+Ahr.Assurance.Playwright.PlaywrightCaptureOptions
+Ahr.Assurance.Playwright.PlaywrightCaptureOptions.FullPage.get -> bool
+Ahr.Assurance.Playwright.PlaywrightCaptureOptions.FullPage.init -> void
+Ahr.Assurance.Playwright.PlaywrightCaptureOptions.Screenshots.get -> Ahr.Assurance.Playwright.ScreenshotCapture
+Ahr.Assurance.Playwright.PlaywrightCaptureOptions.Screenshots.init -> void
+Ahr.Assurance.Playwright.PlaywrightCaptureOptions.Trace.get -> Ahr.Assurance.Playwright.TraceCapture
+Ahr.Assurance.Playwright.PlaywrightCaptureOptions.Trace.init -> void
+Ahr.Assurance.Playwright.ScreenshotCapture
+Ahr.Assurance.Playwright.ScreenshotCapture.AfterEachStep = 2 -> Ahr.Assurance.Playwright.ScreenshotCapture
+Ahr.Assurance.Playwright.ScreenshotCapture.None = 0 -> Ahr.Assurance.Playwright.ScreenshotCapture
+Ahr.Assurance.Playwright.ScreenshotCapture.OnFailure = 1 -> Ahr.Assurance.Playwright.ScreenshotCapture
+Ahr.Assurance.Playwright.TraceCapture
+Ahr.Assurance.Playwright.TraceCapture.Always = 2 -> Ahr.Assurance.Playwright.TraceCapture
+Ahr.Assurance.Playwright.TraceCapture.None = 0 -> Ahr.Assurance.Playwright.TraceCapture
+Ahr.Assurance.Playwright.TraceCapture.OnFailure = 1 -> Ahr.Assurance.Playwright.TraceCapture
+static Ahr.Assurance.Playwright.AssurancePlaywright.Capture(Microsoft.Playwright.IPage! page, Ahr.Assurance.Playwright.PlaywrightCaptureOptions? options = null) -> System.IDisposable!
+Ahr.Assurance.Playwright.PlaywrightCaptureOptions.<Clone>$() -> Ahr.Assurance.Playwright.PlaywrightCaptureOptions!
+Ahr.Assurance.Playwright.PlaywrightCaptureOptions.Equals(Ahr.Assurance.Playwright.PlaywrightCaptureOptions? other) -> bool
+Ahr.Assurance.Playwright.PlaywrightCaptureOptions.PlaywrightCaptureOptions() -> void
+override Ahr.Assurance.Playwright.PlaywrightCaptureOptions.Equals(object? obj) -> bool
+override Ahr.Assurance.Playwright.PlaywrightCaptureOptions.GetHashCode() -> int
+override Ahr.Assurance.Playwright.PlaywrightCaptureOptions.ToString() -> string!
+static Ahr.Assurance.Playwright.PlaywrightCaptureOptions.operator !=(Ahr.Assurance.Playwright.PlaywrightCaptureOptions? left, Ahr.Assurance.Playwright.PlaywrightCaptureOptions? right) -> bool
+static Ahr.Assurance.Playwright.PlaywrightCaptureOptions.operator ==(Ahr.Assurance.Playwright.PlaywrightCaptureOptions? left, Ahr.Assurance.Playwright.PlaywrightCaptureOptions? right) -> bool

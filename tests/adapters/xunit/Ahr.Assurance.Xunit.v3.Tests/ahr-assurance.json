@@ -1,0 +1,8 @@
+{
+  "runs": "artifacts/assurance",
+  "keep": 5,
+  "report": {
+    "title": "Ahr.Assurance xUnit v3 adapter",
+    "output": "report"
+  }
+}

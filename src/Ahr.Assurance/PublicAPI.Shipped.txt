@@ -1,0 +1,624 @@
+#nullable enable
+Ahr.Assurance.Core.AssuranceRunResult
+Ahr.Assurance.Core.AssuranceRunResult.AssuranceRunResult(string! Name, System.DateTimeOffset StartedAt, System.TimeSpan Duration, System.Collections.Immutable.ImmutableArray<Ahr.Assurance.Core.ScenarioResult!> Scenarios) -> void
+Ahr.Assurance.Core.AssuranceRunResult.Duration.get -> System.TimeSpan
+Ahr.Assurance.Core.AssuranceRunResult.Duration.init -> void
+Ahr.Assurance.Core.AssuranceRunResult.Name.get -> string!
+Ahr.Assurance.Core.AssuranceRunResult.Name.init -> void
+Ahr.Assurance.Core.AssuranceRunResult.Scenarios.get -> System.Collections.Immutable.ImmutableArray<Ahr.Assurance.Core.ScenarioResult!>
+Ahr.Assurance.Core.AssuranceRunResult.Scenarios.init -> void
+Ahr.Assurance.Core.AssuranceRunResult.StartedAt.get -> System.DateTimeOffset
+Ahr.Assurance.Core.AssuranceRunResult.StartedAt.init -> void
+Ahr.Assurance.Core.AssuranceRunResult.Status.get -> Ahr.Assurance.Core.AssuranceStatus
+Ahr.Assurance.Core.AssuranceStatus
+Ahr.Assurance.Core.AssuranceStatus.Inconclusive = 3 -> Ahr.Assurance.Core.AssuranceStatus
+Ahr.Assurance.Core.AssuranceStatus.NotEvaluated = 2 -> Ahr.Assurance.Core.AssuranceStatus
+Ahr.Assurance.Core.AssuranceStatus.Satisfied = 0 -> Ahr.Assurance.Core.AssuranceStatus
+Ahr.Assurance.Core.AssuranceStatus.Unsatisfied = 1 -> Ahr.Assurance.Core.AssuranceStatus
+Ahr.Assurance.Core.BusinessContext
+Ahr.Assurance.Core.BusinessContext.Capabilities.get -> System.Collections.Immutable.ImmutableArray<Ahr.Assurance.Core.Capability!>
+Ahr.Assurance.Core.BusinessContext.Description.get -> string!
+Ahr.Assurance.Core.BusinessContext.Id.get -> string?
+Ahr.Assurance.Core.BusinessContext.Name.get -> string?
+Ahr.Assurance.Core.BusinessContext.Objectives.get -> System.Collections.Immutable.ImmutableArray<Ahr.Assurance.Core.Objective!>
+Ahr.Assurance.Core.BusinessContext.Outcomes.get -> System.Collections.Immutable.ImmutableArray<Ahr.Assurance.Core.Outcome!>
+Ahr.Assurance.Core.BusinessContext.Risks.get -> System.Collections.Immutable.ImmutableArray<Ahr.Assurance.Core.Risk!>
+Ahr.Assurance.Core.BusinessContext.Rules.get -> System.Collections.Immutable.ImmutableArray<Ahr.Assurance.Core.BusinessRule!>
+Ahr.Assurance.Core.BusinessContextBuilder
+Ahr.Assurance.Core.BusinessContextBuilder.Build() -> Ahr.Assurance.Core.BusinessContext!
+Ahr.Assurance.Core.BusinessContextBuilder.Capability(Ahr.Assurance.Core.Capability! capability) -> Ahr.Assurance.Core.BusinessContextBuilder!
+Ahr.Assurance.Core.BusinessContextBuilder.Capability(string! id, string! name) -> Ahr.Assurance.Core.BusinessContextBuilder!
+Ahr.Assurance.Core.BusinessContextBuilder.Objective(Ahr.Assurance.Core.Objective! objective) -> Ahr.Assurance.Core.BusinessContextBuilder!
+Ahr.Assurance.Core.BusinessContextBuilder.Objective(string! id, string! name) -> Ahr.Assurance.Core.BusinessContextBuilder!
+Ahr.Assurance.Core.BusinessContextBuilder.Outcome(Ahr.Assurance.Core.Outcome! outcome) -> Ahr.Assurance.Core.BusinessContextBuilder!
+Ahr.Assurance.Core.BusinessContextBuilder.Outcome(string! id, string! name) -> Ahr.Assurance.Core.BusinessContextBuilder!
+Ahr.Assurance.Core.BusinessContextBuilder.Risk(Ahr.Assurance.Core.Risk! risk) -> Ahr.Assurance.Core.BusinessContextBuilder!
+Ahr.Assurance.Core.BusinessContextBuilder.Risk(string! id, string! name) -> Ahr.Assurance.Core.BusinessContextBuilder!
+Ahr.Assurance.Core.BusinessContextBuilder.Rule(Ahr.Assurance.Core.BusinessRule! rule) -> Ahr.Assurance.Core.BusinessContextBuilder!
+Ahr.Assurance.Core.BusinessContextBuilder.Rule(string! id, string! name) -> Ahr.Assurance.Core.BusinessContextBuilder!
+Ahr.Assurance.Core.BusinessItem
+Ahr.Assurance.Core.BusinessItem.Id.get -> string!
+Ahr.Assurance.Core.BusinessItem.Name.get -> string!
+Ahr.Assurance.Core.Capability
+Ahr.Assurance.Core.Capability.Capability(string! id, string! name) -> void
+Ahr.Assurance.Core.ExpectationResult
+Ahr.Assurance.Core.ExpectationResult.Actual.get -> string?
+Ahr.Assurance.Core.ExpectationResult.ExpectationResult(Ahr.Assurance.Core.AssuranceStatus status, string! explanation, string? expected = null, string? actual = null) -> void
+Ahr.Assurance.Core.ExpectationResult.Expected.get -> string?
+Ahr.Assurance.Core.ExpectationResult.Explanation.get -> string!
+Ahr.Assurance.Core.ExpectationResult.Status.get -> Ahr.Assurance.Core.AssuranceStatus
+Ahr.Assurance.Core.Objective
+Ahr.Assurance.Core.Objective.Objective(string! id, string! name) -> void
+Ahr.Assurance.Core.Outcome
+Ahr.Assurance.Core.Outcome.Outcome(string! id, string! name) -> void
+Ahr.Assurance.Core.Risk
+Ahr.Assurance.Core.Risk.Risk(string! id, string! name) -> void
+Ahr.Assurance.Core.BusinessRule
+Ahr.Assurance.Core.BusinessRule.BusinessRule(string! id, string! name) -> void
+Ahr.Assurance.Core.ScenarioResult
+Ahr.Assurance.Core.ScenarioResult.Business.get -> Ahr.Assurance.Core.BusinessContext?
+Ahr.Assurance.Core.ScenarioResult.Business.init -> void
+Ahr.Assurance.Core.ScenarioResult.Description.get -> string?
+Ahr.Assurance.Core.ScenarioResult.Description.init -> void
+Ahr.Assurance.Core.ScenarioResult.Id.get -> string!
+Ahr.Assurance.Core.ScenarioResult.Id.init -> void
+Ahr.Assurance.Core.ScenarioResult.Name.get -> string!
+Ahr.Assurance.Core.ScenarioResult.Name.init -> void
+Ahr.Assurance.Core.ScenarioResult.ScenarioResult(string! Id, string! Name, Ahr.Assurance.Core.BusinessContext? Business, System.Collections.Immutable.ImmutableArray<Ahr.Assurance.Core.StepResult!> Steps, string? Description = null) -> void
+Ahr.Assurance.Core.ScenarioResult.Status.get -> Ahr.Assurance.Core.AssuranceStatus
+Ahr.Assurance.Core.ScenarioResult.Steps.get -> System.Collections.Immutable.ImmutableArray<Ahr.Assurance.Core.StepResult!>
+Ahr.Assurance.Core.ScenarioResult.Steps.init -> void
+Ahr.Assurance.Core.StepKeyword
+Ahr.Assurance.Core.StepKeyword.And = 3 -> Ahr.Assurance.Core.StepKeyword
+Ahr.Assurance.Core.StepKeyword.Given = 0 -> Ahr.Assurance.Core.StepKeyword
+Ahr.Assurance.Core.StepKeyword.Then = 2 -> Ahr.Assurance.Core.StepKeyword
+Ahr.Assurance.Core.StepKeyword.When = 1 -> Ahr.Assurance.Core.StepKeyword
+Ahr.Assurance.Core.StepKind
+Ahr.Assurance.Core.StepKind.Given = 0 -> Ahr.Assurance.Core.StepKind
+Ahr.Assurance.Core.StepKind.Then = 2 -> Ahr.Assurance.Core.StepKind
+Ahr.Assurance.Core.StepKind.When = 1 -> Ahr.Assurance.Core.StepKind
+Ahr.Assurance.Core.StepResult
+Ahr.Assurance.Core.StepResult.AuthoredKeyword.get -> Ahr.Assurance.Core.StepKeyword?
+Ahr.Assurance.Core.StepResult.AuthoredKeyword.init -> void
+Ahr.Assurance.Core.StepResult.Description.get -> string?
+Ahr.Assurance.Core.StepResult.Description.init -> void
+Ahr.Assurance.Core.StepResult.Duration.get -> System.TimeSpan
+Ahr.Assurance.Core.StepResult.Duration.init -> void
+Ahr.Assurance.Core.StepResult.Evaluation.get -> Ahr.Assurance.Core.ExpectationResult!
+Ahr.Assurance.Core.StepResult.Evaluation.init -> void
+Ahr.Assurance.Core.StepResult.Keyword.get -> Ahr.Assurance.Core.StepKeyword
+Ahr.Assurance.Core.StepResult.Kind.get -> Ahr.Assurance.Core.StepKind
+Ahr.Assurance.Core.StepResult.Kind.init -> void
+Ahr.Assurance.Core.StepResult.Name.get -> string!
+Ahr.Assurance.Core.StepResult.Name.init -> void
+Ahr.Assurance.Core.StepResult.StepResult(string! Name, Ahr.Assurance.Core.StepKind Kind, Ahr.Assurance.Core.ExpectationResult! Evaluation, System.TimeSpan Duration, string? Description = null, Ahr.Assurance.Core.StepKeyword? AuthoredKeyword = null) -> void
+Ahr.Assurance.Execution.Scenario
+Ahr.Assurance.Execution.Scenario.And(string! name, System.Func<Ahr.Assurance.Core.ExpectationResult!>! evaluate, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario.And(string! name, System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<Ahr.Assurance.Core.ExpectationResult!>!>! evaluate, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario.And(string! name, System.Func<System.Threading.Tasks.Task<Ahr.Assurance.Core.ExpectationResult!>!>! evaluate, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario.Given(string! name, System.Action! action, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario.Given(string! name, System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task!>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario.Given(string! name, System.Func<System.Threading.Tasks.Task!>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario.Then(string! name, System.Func<Ahr.Assurance.Core.ExpectationResult!>! evaluate, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario.Then(string! name, System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<Ahr.Assurance.Core.ExpectationResult!>!>! evaluate, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario.Then(string! name, System.Func<System.Threading.Tasks.Task<Ahr.Assurance.Core.ExpectationResult!>!>! evaluate, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario.When(string! name, System.Action! action, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario.When(string! name, System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task!>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario.When(string! name, System.Func<System.Threading.Tasks.Task!>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario<TContext>
+Ahr.Assurance.Execution.Scenario<TContext>.And(Ahr.Assurance.Execution.ScenarioAction<TContext>! action) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.And(Ahr.Assurance.Execution.ScenarioExpectation<TContext>! expectation) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.And(string! name, System.Func<TContext, Ahr.Assurance.Core.ExpectationResult!>! evaluate, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.And(string! name, System.Func<TContext, System.Threading.CancellationToken, System.Threading.Tasks.Task<Ahr.Assurance.Core.ExpectationResult!>!>! evaluate, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.And(string! name, System.Func<TContext, System.Threading.Tasks.Task<Ahr.Assurance.Core.ExpectationResult!>!>! evaluate, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.Business.get -> Ahr.Assurance.Core.BusinessContext?
+Ahr.Assurance.Execution.Scenario<TContext>.Description.get -> string?
+Ahr.Assurance.Execution.Scenario<TContext>.Given(Ahr.Assurance.Execution.ScenarioAction<TContext>! action) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.Given(string! name, System.Action<TContext>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.Given(string! name, System.Func<TContext, System.Threading.CancellationToken, System.Threading.Tasks.Task!>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.Given(string! name, System.Func<TContext, System.Threading.Tasks.Task!>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.Id.get -> string!
+Ahr.Assurance.Execution.Scenario<TContext>.Name.get -> string!
+Ahr.Assurance.Execution.Scenario<TContext>.Then(Ahr.Assurance.Execution.ScenarioExpectation<TContext>! expectation) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.Then(string! name, System.Func<TContext, Ahr.Assurance.Core.ExpectationResult!>! evaluate, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.Then(string! name, System.Func<TContext, System.Threading.CancellationToken, System.Threading.Tasks.Task<Ahr.Assurance.Core.ExpectationResult!>!>! evaluate, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.Then(string! name, System.Func<TContext, System.Threading.Tasks.Task<Ahr.Assurance.Core.ExpectationResult!>!>! evaluate, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.When(Ahr.Assurance.Execution.ScenarioAction<TContext>! action) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.When(string! name, System.Action<TContext>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.When(string! name, System.Func<TContext, System.Threading.CancellationToken, System.Threading.Tasks.Task!>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.When(string! name, System.Func<TContext, System.Threading.Tasks.Task!>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.ScenarioAction<TContext>
+Ahr.Assurance.Execution.ScenarioAction<TContext>.Description.get -> string?
+Ahr.Assurance.Execution.ScenarioAction<TContext>.Name.get -> string!
+Ahr.Assurance.Execution.ScenarioExpectation<TContext>
+Ahr.Assurance.Execution.ScenarioExpectation<TContext>.Description.get -> string?
+Ahr.Assurance.Execution.ScenarioExpectation<TContext>.Name.get -> string!
+Ahr.Assurance.Execution.ScenarioSteps<TContext>
+Ahr.Assurance.Execution.ScenarioSteps<TContext>.ScenarioSteps() -> void
+Ahr.Assurance.Reporting.AssuranceArtifact
+Ahr.Assurance.Reporting.AssuranceArtifact.AssuranceArtifact(string! Name, string! Location) -> void
+Ahr.Assurance.Reporting.AssuranceArtifact.Location.get -> string!
+Ahr.Assurance.Reporting.AssuranceArtifact.Location.init -> void
+Ahr.Assurance.Reporting.AssuranceArtifact.Name.get -> string!
+Ahr.Assurance.Reporting.AssuranceArtifact.Name.init -> void
+Ahr.Assurance.Reporting.AssuranceReport
+Ahr.Assurance.Reporting.AssuranceReport.Artifacts.get -> System.Collections.Immutable.ImmutableArray<Ahr.Assurance.Reporting.AssuranceArtifact!>
+Ahr.Assurance.Reporting.AssuranceReport.Artifacts.init -> void
+Ahr.Assurance.Reporting.AssuranceReport.AssuranceReport(Ahr.Assurance.Core.AssuranceRunResult! Run, System.Collections.Immutable.ImmutableArray<Ahr.Assurance.Reporting.ReportDiagnostic!> Diagnostics, System.Collections.Immutable.ImmutableArray<Ahr.Assurance.Reporting.AssuranceArtifact!> Artifacts = default(System.Collections.Immutable.ImmutableArray<Ahr.Assurance.Reporting.AssuranceArtifact!>)) -> void
+Ahr.Assurance.Reporting.AssuranceReport.Diagnostics.get -> System.Collections.Immutable.ImmutableArray<Ahr.Assurance.Reporting.ReportDiagnostic!>
+Ahr.Assurance.Reporting.AssuranceReport.Diagnostics.init -> void
+Ahr.Assurance.Reporting.AssuranceReport.Run.get -> Ahr.Assurance.Core.AssuranceRunResult!
+Ahr.Assurance.Reporting.AssuranceReport.Run.init -> void
+Ahr.Assurance.Reporting.AssuranceTextVerbosity
+Ahr.Assurance.Reporting.AssuranceTextVerbosity.Compact = 1 -> Ahr.Assurance.Reporting.AssuranceTextVerbosity
+Ahr.Assurance.Reporting.AssuranceTextVerbosity.Detailed = 3 -> Ahr.Assurance.Reporting.AssuranceTextVerbosity
+Ahr.Assurance.Reporting.AssuranceTextVerbosity.Off = 0 -> Ahr.Assurance.Reporting.AssuranceTextVerbosity
+Ahr.Assurance.Reporting.AssuranceTextVerbosity.Standard = 2 -> Ahr.Assurance.Reporting.AssuranceTextVerbosity
+Ahr.Assurance.Reporting.AssuranceVerificationResult
+Ahr.Assurance.Reporting.AssuranceVerificationResult.Artifacts.get -> System.Collections.Immutable.ImmutableArray<Ahr.Assurance.Reporting.AssuranceArtifact!>
+Ahr.Assurance.Reporting.AssuranceVerificationResult.Artifacts.init -> void
+Ahr.Assurance.Reporting.AssuranceVerificationResult.AssuranceVerificationResult(Ahr.Assurance.Core.AssuranceRunResult! Run, System.Collections.Immutable.ImmutableArray<Ahr.Assurance.Reporting.AssuranceArtifact!> Artifacts) -> void
+Ahr.Assurance.Reporting.AssuranceVerificationResult.Name.get -> string!
+Ahr.Assurance.Reporting.AssuranceVerificationResult.Run.get -> Ahr.Assurance.Core.AssuranceRunResult!
+Ahr.Assurance.Reporting.AssuranceVerificationResult.Run.init -> void
+Ahr.Assurance.Reporting.AssuranceVerificationResult.Scenarios.get -> System.Collections.Immutable.ImmutableArray<Ahr.Assurance.Core.ScenarioResult!>
+Ahr.Assurance.Reporting.AssuranceVerificationResult.Status.get -> Ahr.Assurance.Core.AssuranceStatus
+Ahr.Assurance.Reporting.EvidenceAttachment
+Ahr.Assurance.Reporting.EvidenceAttachment.Available.get -> bool
+Ahr.Assurance.Reporting.EvidenceAttachment.Available.init -> void
+Ahr.Assurance.Reporting.EvidenceAttachment.DetailsWithheld.get -> bool
+Ahr.Assurance.Reporting.EvidenceAttachment.DetailsWithheld.init -> void
+Ahr.Assurance.Reporting.EvidenceAttachment.EvidenceAttachment(string! Id, string! Name, string! MediaType, string! Reference, string? ScenarioId = null, int? StepIndex = null, bool Available = true, bool DetailsWithheld = false) -> void
+Ahr.Assurance.Reporting.EvidenceAttachment.Id.get -> string!
+Ahr.Assurance.Reporting.EvidenceAttachment.Id.init -> void
+Ahr.Assurance.Reporting.EvidenceAttachment.MediaType.get -> string!
+Ahr.Assurance.Reporting.EvidenceAttachment.MediaType.init -> void
+Ahr.Assurance.Reporting.EvidenceAttachment.Name.get -> string!
+Ahr.Assurance.Reporting.EvidenceAttachment.Name.init -> void
+Ahr.Assurance.Reporting.EvidenceAttachment.Reference.get -> string!
+Ahr.Assurance.Reporting.EvidenceAttachment.Reference.init -> void
+Ahr.Assurance.Reporting.EvidenceAttachment.ScenarioId.get -> string?
+Ahr.Assurance.Reporting.EvidenceAttachment.ScenarioId.init -> void
+Ahr.Assurance.Reporting.EvidenceAttachment.StepIndex.get -> int?
+Ahr.Assurance.Reporting.EvidenceAttachment.StepIndex.init -> void
+Ahr.Assurance.Reporting.EvidenceDeliveryContext
+Ahr.Assurance.Reporting.EvidenceDeliveryContext.DefaultOutputDirectory.get -> string!
+Ahr.Assurance.Reporting.EvidenceDeliveryContext.DefaultOutputDirectory.init -> void
+Ahr.Assurance.Reporting.EvidenceDeliveryContext.IncludeDiagnosticDetails.get -> bool
+Ahr.Assurance.Reporting.EvidenceDeliveryContext.IncludeDiagnosticDetails.init -> void
+Ahr.Assurance.Reporting.EvidenceDeliveryContext.IsRecovery.get -> bool
+Ahr.Assurance.Reporting.EvidenceDeliveryContext.IsRecovery.init -> void
+Ahr.Assurance.Reporting.EvidenceDeliveryResult
+Ahr.Assurance.Reporting.EvidenceDeliveryResult.Artifacts.get -> System.Collections.Immutable.ImmutableArray<Ahr.Assurance.Reporting.AssuranceArtifact!>
+Ahr.Assurance.Reporting.EvidenceDeliveryResult.Artifacts.init -> void
+Ahr.Assurance.Reporting.EvidenceDeliveryResult.Diagnostics.get -> System.Collections.Immutable.ImmutableArray<Ahr.Assurance.Reporting.ReportDiagnostic!>
+Ahr.Assurance.Reporting.EvidenceDeliveryResult.Diagnostics.init -> void
+Ahr.Assurance.Reporting.EvidenceDeliveryResult.EvidenceDeliveryResult(System.Collections.Immutable.ImmutableArray<Ahr.Assurance.Reporting.AssuranceArtifact!> Artifacts, System.Collections.Immutable.ImmutableArray<Ahr.Assurance.Reporting.ReportDiagnostic!> Diagnostics) -> void
+Ahr.Assurance.Reporting.HtmlReportSinkOptions
+Ahr.Assurance.Reporting.HtmlReportSinkOptions.MaxTextLength.get -> int
+Ahr.Assurance.Reporting.HtmlReportSinkOptions.MaxTextLength.init -> void
+Ahr.Assurance.Reporting.HtmlReportSinkOptions.OutputDirectory.get -> string?
+Ahr.Assurance.Reporting.HtmlReportSinkOptions.OutputDirectory.init -> void
+Ahr.Assurance.Reporting.IAssuranceEvidenceSink
+Ahr.Assurance.Reporting.IAssuranceEvidenceSink.Name.get -> string!
+Ahr.Assurance.Reporting.IAssuranceEvidenceSink.PublishAsync(Ahr.Assurance.Reporting.VerificationEvidence! evidence, Ahr.Assurance.Reporting.EvidenceDeliveryContext! context, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<Ahr.Assurance.Reporting.EvidenceDeliveryResult!>!
+Ahr.Assurance.Reporting.JsonReportSinkOptions
+Ahr.Assurance.Reporting.JsonReportSinkOptions.OutputDirectory.get -> string?
+Ahr.Assurance.Reporting.JsonReportSinkOptions.OutputDirectory.init -> void
+Ahr.Assurance.Reporting.JsonReportSinkOptions.WriteIndented.get -> bool
+Ahr.Assurance.Reporting.JsonReportSinkOptions.WriteIndented.init -> void
+Ahr.Assurance.Reporting.ReportDiagnostic
+Ahr.Assurance.Reporting.ReportDiagnostic.Code.get -> string!
+Ahr.Assurance.Reporting.ReportDiagnostic.Code.init -> void
+Ahr.Assurance.Reporting.ReportDiagnostic.DetailsWithheld.get -> bool
+Ahr.Assurance.Reporting.ReportDiagnostic.DetailsWithheld.init -> void
+Ahr.Assurance.Reporting.ReportDiagnostic.ExceptionType.get -> string?
+Ahr.Assurance.Reporting.ReportDiagnostic.ExceptionType.init -> void
+Ahr.Assurance.Reporting.ReportDiagnostic.Message.get -> string!
+Ahr.Assurance.Reporting.ReportDiagnostic.Message.init -> void
+Ahr.Assurance.Reporting.ReportDiagnostic.ReportDiagnostic(string! Code, string! Message, string? ExceptionType = null, bool DetailsWithheld = false) -> void
+Ahr.Assurance.Reporting.ReportOptions
+Ahr.Assurance.Reporting.ReportOptions.CorrelationId.get -> string?
+Ahr.Assurance.Reporting.ReportOptions.CorrelationId.init -> void
+Ahr.Assurance.Reporting.ReportOptions.DefaultOutputDirectory.get -> string!
+Ahr.Assurance.Reporting.ReportOptions.DefaultOutputDirectory.init -> void
+Ahr.Assurance.Reporting.ReportOptions.IncludeDiagnosticDetails.get -> bool
+Ahr.Assurance.Reporting.ReportOptions.IncludeDiagnosticDetails.init -> void
+Ahr.Assurance.Reporting.ReportOptions.Sinks.get -> System.Collections.Immutable.ImmutableArray<Ahr.Assurance.Reporting.IAssuranceEvidenceSink!>
+Ahr.Assurance.Reporting.ReportOptions.Sinks.init -> void
+Ahr.Assurance.Reporting.ReportOptions.TextOutput.get -> Ahr.Assurance.Reporting.AssuranceTextVerbosity
+Ahr.Assurance.Reporting.ReportOptions.TextOutput.init -> void
+Ahr.Assurance.Reporting.ReportSinks
+Ahr.Assurance.Reporting.VerificationEvidence
+Ahr.Assurance.Reporting.VerificationEvidence.Attachments.get -> System.Collections.Immutable.ImmutableArray<Ahr.Assurance.Reporting.EvidenceAttachment!>
+Ahr.Assurance.Reporting.VerificationEvidence.Attachments.init -> void
+Ahr.Assurance.Reporting.VerificationEvidence.CorrelationId.get -> string!
+Ahr.Assurance.Reporting.VerificationEvidence.CorrelationId.init -> void
+Ahr.Assurance.Reporting.VerificationEvidence.ExecutionState.get -> Ahr.Assurance.Reporting.VerificationExecutionState
+Ahr.Assurance.Reporting.VerificationEvidence.ExecutionState.init -> void
+Ahr.Assurance.Reporting.VerificationEvidence.Producer.get -> string!
+Ahr.Assurance.Reporting.VerificationEvidence.Producer.init -> void
+Ahr.Assurance.Reporting.VerificationEvidence.Report.get -> Ahr.Assurance.Reporting.AssuranceReport!
+Ahr.Assurance.Reporting.VerificationEvidence.Report.init -> void
+Ahr.Assurance.Reporting.VerificationEvidence.TestId.get -> string?
+Ahr.Assurance.Reporting.VerificationEvidence.TestId.init -> void
+Ahr.Assurance.Reporting.VerificationEvidence.TestName.get -> string?
+Ahr.Assurance.Reporting.VerificationEvidence.TestName.init -> void
+Ahr.Assurance.Reporting.VerificationEvidence.VerificationEvidence(string! VerificationId, string! CorrelationId, string! Producer, string? TestId, string? TestName, Ahr.Assurance.Reporting.VerificationExecutionState ExecutionState, Ahr.Assurance.Reporting.AssuranceReport! Report, System.Collections.Immutable.ImmutableArray<Ahr.Assurance.Reporting.EvidenceAttachment!> Attachments) -> void
+Ahr.Assurance.Reporting.VerificationEvidence.VerificationId.get -> string!
+Ahr.Assurance.Reporting.VerificationEvidence.VerificationId.init -> void
+Ahr.Assurance.Reporting.VerificationExecutionState
+Ahr.Assurance.Reporting.VerificationExecutionState.Canceled = 2 -> Ahr.Assurance.Reporting.VerificationExecutionState
+Ahr.Assurance.Reporting.VerificationExecutionState.Completed = 0 -> Ahr.Assurance.Reporting.VerificationExecutionState
+Ahr.Assurance.Reporting.VerificationExecutionState.Failed = 1 -> Ahr.Assurance.Reporting.VerificationExecutionState
+Ahr.Assurance.Reporting.VerificationExecutionState.Incomplete = 3 -> Ahr.Assurance.Reporting.VerificationExecutionState
+static Ahr.Assurance.Core.BusinessContext.Define(string! description) -> Ahr.Assurance.Core.BusinessContextBuilder!
+static Ahr.Assurance.Core.BusinessContext.Define(string! id, string! name, string! description) -> Ahr.Assurance.Core.BusinessContextBuilder!
+static Ahr.Assurance.Core.ExpectationResult.Check(bool satisfied, string! explanation, string! expected, string! actual) -> Ahr.Assurance.Core.ExpectationResult!
+static Ahr.Assurance.Execution.Scenario.Define(string! name, Ahr.Assurance.Core.BusinessContext? business = null, string? id = null, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+static Ahr.Assurance.Execution.Scenario.Define<TContext>(string! name, System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<TContext>!>! createContextAsync, Ahr.Assurance.Core.BusinessContext? business = null, string? id = null, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+static Ahr.Assurance.Execution.Scenario.Define<TContext>(string! name, System.Func<TContext>! createContext, Ahr.Assurance.Core.BusinessContext? business = null, string? id = null, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+static Ahr.Assurance.Execution.ScenarioSteps<TContext>.CreateActionStep(string! name, System.Action<TContext>! execute, string? description = null) -> Ahr.Assurance.Execution.ScenarioAction<TContext>!
+static Ahr.Assurance.Execution.ScenarioSteps<TContext>.CreateActionStep(string! name, System.Func<TContext, System.Threading.CancellationToken, System.Threading.Tasks.Task!>! execute, string? description = null) -> Ahr.Assurance.Execution.ScenarioAction<TContext>!
+static Ahr.Assurance.Execution.ScenarioSteps<TContext>.CreateActionStep(string! name, System.Func<TContext, System.Threading.Tasks.Task!>! execute, string? description = null) -> Ahr.Assurance.Execution.ScenarioAction<TContext>!
+static Ahr.Assurance.Execution.ScenarioSteps<TContext>.CreateExpectationStep(string! name, System.Func<TContext, Ahr.Assurance.Core.ExpectationResult!>! evaluate, string? description = null) -> Ahr.Assurance.Execution.ScenarioExpectation<TContext>!
+static Ahr.Assurance.Execution.ScenarioSteps<TContext>.CreateExpectationStep(string! name, System.Func<TContext, System.Threading.CancellationToken, System.Threading.Tasks.Task<Ahr.Assurance.Core.ExpectationResult!>!>! evaluate, string? description = null) -> Ahr.Assurance.Execution.ScenarioExpectation<TContext>!
+static Ahr.Assurance.Execution.ScenarioSteps<TContext>.CreateExpectationStep(string! name, System.Func<TContext, System.Threading.Tasks.Task<Ahr.Assurance.Core.ExpectationResult!>!>! evaluate, string? description = null) -> Ahr.Assurance.Execution.ScenarioExpectation<TContext>!
+static Ahr.Assurance.Reporting.EvidenceDeliveryResult.Empty.get -> Ahr.Assurance.Reporting.EvidenceDeliveryResult!
+static Ahr.Assurance.Reporting.ReportSinks.Html(Ahr.Assurance.Reporting.HtmlReportSinkOptions? options = null) -> Ahr.Assurance.Reporting.IAssuranceEvidenceSink!
+static Ahr.Assurance.Reporting.ReportSinks.Json(Ahr.Assurance.Reporting.JsonReportSinkOptions? options = null) -> Ahr.Assurance.Reporting.IAssuranceEvidenceSink!
+Ahr.Assurance.Core.BusinessContext.References.get -> System.Collections.Immutable.ImmutableArray<Ahr.Assurance.Core.ExternalReference!>
+Ahr.Assurance.Core.BusinessContextBuilder.Reference(Ahr.Assurance.Core.ExternalReference! reference) -> Ahr.Assurance.Core.BusinessContextBuilder!
+Ahr.Assurance.Core.BusinessContextBuilder.Reference(string! provider, string! key, System.Uri? url = null) -> Ahr.Assurance.Core.BusinessContextBuilder!
+Ahr.Assurance.Core.ExternalReference
+Ahr.Assurance.Core.ExternalReference.ExternalReference(string! provider, string! key, System.Uri? url = null) -> void
+Ahr.Assurance.Core.ExternalReference.Key.get -> string!
+Ahr.Assurance.Core.ExternalReference.Provider.get -> string!
+Ahr.Assurance.Core.ExternalReference.Url.get -> System.Uri?
+Ahr.Assurance.Core.ScenarioResult.References.get -> System.Collections.Immutable.ImmutableArray<Ahr.Assurance.Core.ExternalReference!>
+Ahr.Assurance.Core.ScenarioResult.References.init -> void
+Ahr.Assurance.Execution.Scenario.Reference(string! provider, string! key, System.Uri? url = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario<TContext>.Reference(string! provider, string! key, System.Uri? url = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.References.get -> System.Collections.Immutable.ImmutableArray<Ahr.Assurance.Core.ExternalReference!>
+Ahr.Assurance.Reporting.VerificationEvidence.CorrelationSource.get -> string!
+Ahr.Assurance.Reporting.VerificationEvidence.CorrelationSource.init -> void
+Ahr.Assurance.Execution.Attach
+static Ahr.Assurance.Execution.Attach.Bytes(string! name, byte[]! content, string! mediaType, Ahr.Assurance.Execution.AttachmentKeep keep = Ahr.Assurance.Execution.AttachmentKeep.Always) -> void
+static Ahr.Assurance.Execution.Attach.File(string! path, string? name = null, Ahr.Assurance.Execution.AttachmentKeep keep = Ahr.Assurance.Execution.AttachmentKeep.Always) -> void
+static Ahr.Assurance.Execution.Attach.Text(string! name, string! text, Ahr.Assurance.Execution.AttachmentKeep keep = Ahr.Assurance.Execution.AttachmentKeep.Always) -> void
+Ahr.Assurance.Reporting.EvidenceDeliveryContext.AttachmentsDirectory.get -> string?
+Ahr.Assurance.Reporting.EvidenceDeliveryContext.AttachmentsDirectory.init -> void
+Ahr.Assurance.Reporting.ReportOptions.AttachmentsDirectory.get -> string!
+Ahr.Assurance.Reporting.ReportOptions.AttachmentsDirectory.init -> void
+Ahr.Assurance.Reporting.VerificationEvidence.AttachmentsDirectory.get -> string?
+Ahr.Assurance.Reporting.VerificationEvidence.AttachmentsDirectory.init -> void
+Ahr.Assurance.Reporting.AssuranceResults
+Ahr.Assurance.Reporting.AssuranceResults.Directory.get -> string!
+Ahr.Assurance.Reporting.AssuranceResults.GetAttachmentPath(Ahr.Assurance.Reporting.VerificationEvidence! verification, Ahr.Assurance.Reporting.EvidenceAttachment! attachment) -> string?
+Ahr.Assurance.Reporting.AssuranceResults.GetAttachmentsDirectory(Ahr.Assurance.Reporting.VerificationEvidence! verification) -> string!
+Ahr.Assurance.Reporting.AssuranceResults.Verifications.get -> System.Collections.Immutable.ImmutableArray<Ahr.Assurance.Reporting.VerificationEvidence!>
+static Ahr.Assurance.Reporting.AssuranceResults.LoadAsync(string! path, string? attachmentsDirectory = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<Ahr.Assurance.Reporting.AssuranceResults!>!
+Ahr.Assurance.Reporting.EvidenceDeliveryContext.EvidenceDeliveryContext(string! DefaultOutputDirectory) -> void
+Ahr.Assurance.Reporting.VerificationEvidence.AssuranceVersion.get -> string?
+Ahr.Assurance.Reporting.VerificationEvidence.AssuranceVersion.init -> void
+Ahr.Assurance.Execution.Scenario.And(string! name, System.Action! step, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario.And(string! name, System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task!>! step, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario.And(string! name, System.Func<System.Threading.Tasks.Task!>! step, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario.Then(string! name, System.Action! assertion, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario.Then(string! name, System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task!>! assertion, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario.Then(string! name, System.Func<System.Threading.Tasks.Task!>! assertion, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario<TContext>.And(string! name, System.Action<TContext>! step, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.And(string! name, System.Func<TContext, System.Threading.CancellationToken, System.Threading.Tasks.Task!>! step, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.And(string! name, System.Func<TContext, System.Threading.Tasks.Task!>! step, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.Then(string! name, System.Action<TContext>! assertion, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.Then(string! name, System.Func<TContext, System.Threading.CancellationToken, System.Threading.Tasks.Task!>! assertion, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.Then(string! name, System.Func<TContext, System.Threading.Tasks.Task!>! assertion, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+static Ahr.Assurance.Execution.ScenarioSteps<TContext>.CreateAssertionStep(string! name, System.Action<TContext>! assertion, string? description = null) -> Ahr.Assurance.Execution.ScenarioExpectation<TContext>!
+static Ahr.Assurance.Execution.ScenarioSteps<TContext>.CreateAssertionStep(string! name, System.Func<TContext, Ahr.Assurance.Core.ExpectationResult!>! evaluate, string? description = null) -> Ahr.Assurance.Execution.ScenarioExpectation<TContext>!
+static Ahr.Assurance.Execution.ScenarioSteps<TContext>.CreateAssertionStep(string! name, System.Func<TContext, System.Threading.CancellationToken, System.Threading.Tasks.Task!>! assertion, string? description = null) -> Ahr.Assurance.Execution.ScenarioExpectation<TContext>!
+static Ahr.Assurance.Execution.ScenarioSteps<TContext>.CreateAssertionStep(string! name, System.Func<TContext, System.Threading.CancellationToken, System.Threading.Tasks.Task<Ahr.Assurance.Core.ExpectationResult!>!>! evaluate, string? description = null) -> Ahr.Assurance.Execution.ScenarioExpectation<TContext>!
+static Ahr.Assurance.Execution.ScenarioSteps<TContext>.CreateAssertionStep(string! name, System.Func<TContext, System.Threading.Tasks.Task!>! assertion, string? description = null) -> Ahr.Assurance.Execution.ScenarioExpectation<TContext>!
+static Ahr.Assurance.Execution.ScenarioSteps<TContext>.CreateAssertionStep(string! name, System.Func<TContext, System.Threading.Tasks.Task<Ahr.Assurance.Core.ExpectationResult!>!>! evaluate, string? description = null) -> Ahr.Assurance.Execution.ScenarioExpectation<TContext>!
+Ahr.Assurance.Core.StepParameter
+Ahr.Assurance.Core.StepParameter.Name.get -> string!
+Ahr.Assurance.Core.StepParameter.Name.init -> void
+Ahr.Assurance.Core.StepParameter.StepParameter(string! Name, string! Value) -> void
+Ahr.Assurance.Core.StepParameter.Value.get -> string!
+Ahr.Assurance.Core.StepParameter.Value.init -> void
+Ahr.Assurance.Core.StepResult.Parameters.get -> System.Collections.Immutable.ImmutableArray<Ahr.Assurance.Core.StepParameter!>
+Ahr.Assurance.Core.StepResult.Parameters.init -> void
+Ahr.Assurance.Execution.SharedStepExtensions
+static Ahr.Assurance.Execution.Scenario.Define<TContext>(string! name, Ahr.Assurance.Core.BusinessContext? business = null, string? id = null, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+static Ahr.Assurance.Execution.SharedStepExtensions.Given<TContext, TShared>(this Ahr.Assurance.Execution.Scenario<TContext!>! scenario, Ahr.Assurance.Execution.ScenarioAction<TShared>! action) -> Ahr.Assurance.Execution.Scenario<TContext!>!
+static Ahr.Assurance.Execution.SharedStepExtensions.When<TContext, TShared>(this Ahr.Assurance.Execution.Scenario<TContext!>! scenario, Ahr.Assurance.Execution.ScenarioAction<TShared>! action) -> Ahr.Assurance.Execution.Scenario<TContext!>!
+static Ahr.Assurance.Execution.SharedStepExtensions.Then<TContext, TShared>(this Ahr.Assurance.Execution.Scenario<TContext!>! scenario, Ahr.Assurance.Execution.ScenarioExpectation<TShared>! expectation) -> Ahr.Assurance.Execution.Scenario<TContext!>!
+static Ahr.Assurance.Execution.SharedStepExtensions.And<TContext, TShared>(this Ahr.Assurance.Execution.Scenario<TContext!>! scenario, Ahr.Assurance.Execution.ScenarioAction<TShared>! action) -> Ahr.Assurance.Execution.Scenario<TContext!>!
+static Ahr.Assurance.Execution.SharedStepExtensions.And<TContext, TShared>(this Ahr.Assurance.Execution.Scenario<TContext!>! scenario, Ahr.Assurance.Execution.ScenarioExpectation<TShared>! expectation) -> Ahr.Assurance.Execution.Scenario<TContext!>!
+Ahr.Assurance.Core.ScenarioResult.Example.get -> System.Collections.Immutable.ImmutableArray<Ahr.Assurance.Core.StepParameter!>
+Ahr.Assurance.Core.ScenarioResult.Example.init -> void
+Ahr.Assurance.Core.ScenarioResult.OutlineId.get -> string?
+Ahr.Assurance.Core.ScenarioResult.OutlineId.init -> void
+Ahr.Assurance.Execution.Scenario.WhenThrows<TException>(string! name, System.Action! action, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario.WhenThrows<TException>(string! name, System.Func<System.Threading.Tasks.Task!>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario.WhenThrows<TException>(string! name, System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task!>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario.AndThrows<TException>(string! name, System.Action! action, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario.AndThrows<TException>(string! name, System.Func<System.Threading.Tasks.Task!>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario.AndThrows<TException>(string! name, System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task!>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario.Then<TValue>(string! name, System.Action<TValue>! check, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario.Then<TValue>(string! name, System.Func<TValue, System.Threading.Tasks.Task!>! check, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario.And<TValue>(string! name, System.Action<TValue>! check, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario.And<TValue>(string! name, System.Func<TValue, System.Threading.Tasks.Task!>! check, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario<TContext>.WhenThrows<TException>(string! name, System.Action<TContext>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.WhenThrows<TException>(string! name, System.Func<TContext, System.Threading.Tasks.Task!>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.WhenThrows<TException>(string! name, System.Func<TContext, System.Threading.CancellationToken, System.Threading.Tasks.Task!>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.AndThrows<TException>(string! name, System.Action<TContext>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.AndThrows<TException>(string! name, System.Func<TContext, System.Threading.Tasks.Task!>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.AndThrows<TException>(string! name, System.Func<TContext, System.Threading.CancellationToken, System.Threading.Tasks.Task!>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.Then<TValue>(string! name, System.Action<TContext, TValue>! check, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.Then<TValue>(string! name, System.Func<TContext, TValue, System.Threading.Tasks.Task!>! check, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.And<TValue>(string! name, System.Action<TContext, TValue>! check, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.And<TValue>(string! name, System.Func<TContext, TValue, System.Threading.Tasks.Task!>! check, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+static Ahr.Assurance.Execution.ScenarioSteps<TContext>.CreateThrowsStep<TException>(string! name, System.Action<TContext>! execute, string? description = null) -> Ahr.Assurance.Execution.ScenarioAction<TContext>!
+static Ahr.Assurance.Execution.ScenarioSteps<TContext>.CreateThrowsStep<TException>(string! name, System.Func<TContext, System.Threading.Tasks.Task!>! execute, string? description = null) -> Ahr.Assurance.Execution.ScenarioAction<TContext>!
+static Ahr.Assurance.Execution.ScenarioSteps<TContext>.CreateThrowsStep<TException>(string! name, System.Func<TContext, System.Threading.CancellationToken, System.Threading.Tasks.Task!>! execute, string? description = null) -> Ahr.Assurance.Execution.ScenarioAction<TContext>!
+static Ahr.Assurance.Execution.ScenarioSteps<TContext>.CreateThrownStep<TException>(string! name, System.Action<TContext, TException!>! check, string? description = null) -> Ahr.Assurance.Execution.ScenarioExpectation<TContext>!
+static Ahr.Assurance.Execution.ScenarioSteps<TContext>.CreateThrownStep<TException>(string! name, System.Func<TContext, TException!, System.Threading.Tasks.Task!>! check, string? description = null) -> Ahr.Assurance.Execution.ScenarioExpectation<TContext>!
+Ahr.Assurance.Execution.AttachmentKeep
+Ahr.Assurance.Execution.AttachmentKeep.Always = 0 -> Ahr.Assurance.Execution.AttachmentKeep
+Ahr.Assurance.Execution.AttachmentKeep.OnFailure = 1 -> Ahr.Assurance.Execution.AttachmentKeep
+Ahr.Assurance.Execution.Scenario.WhenThrows<TException>(string! name, System.Func<object?>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario.WhenThrows<TException>(string! name, System.Func<System.Threading.Tasks.Task<object?>!>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario.AndThrows<TException>(string! name, System.Func<object?>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario.AndThrows<TException>(string! name, System.Func<System.Threading.Tasks.Task<object?>!>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario<TContext>.WhenThrows<TException>(string! name, System.Func<TContext, object?>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.WhenThrows<TException>(string! name, System.Func<TContext, System.Threading.Tasks.Task<object?>!>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.AndThrows<TException>(string! name, System.Func<TContext, object?>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.AndThrows<TException>(string! name, System.Func<TContext, System.Threading.Tasks.Task<object?>!>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+static Ahr.Assurance.Execution.ScenarioSteps<TContext>.CreateThrowsStep<TException>(string! name, System.Func<TContext, object?>! execute, string? description = null) -> Ahr.Assurance.Execution.ScenarioAction<TContext>!
+static Ahr.Assurance.Execution.ScenarioSteps<TContext>.CreateThrowsStep<TException>(string! name, System.Func<TContext, System.Threading.Tasks.Task<object?>!>! execute, string? description = null) -> Ahr.Assurance.Execution.ScenarioAction<TContext>!
+Ahr.Assurance.Execution.Scenario.When<TResult>(string! name, System.Func<TResult>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario.When<TResult>(string! name, System.Func<System.Threading.Tasks.Task<TResult>!>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario.When<TResult>(string! name, System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<TResult>!>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario<TContext>.When<TResult>(string! name, System.Func<TContext, TResult>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.When<TResult>(string! name, System.Func<TContext, System.Threading.Tasks.Task<TResult>!>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.When<TResult>(string! name, System.Func<TContext, System.Threading.CancellationToken, System.Threading.Tasks.Task<TResult>!>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.And<TResult>(string! name, System.Func<TContext, TResult>! step, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.And<TResult>(string! name, System.Func<TContext, System.Threading.Tasks.Task<TResult>!>! step, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.And<TResult>(string! name, System.Func<TContext, System.Threading.CancellationToken, System.Threading.Tasks.Task<TResult>!>! step, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.Then<TValue>(string! name, System.Func<TContext, TValue, System.Threading.CancellationToken, System.Threading.Tasks.Task!>! check, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.And<TValue>(string! name, System.Func<TContext, TValue, System.Threading.CancellationToken, System.Threading.Tasks.Task!>! check, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario.And<TResult>(string! name, System.Func<TResult>! step, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario.And<TResult>(string! name, System.Func<System.Threading.Tasks.Task<TResult>!>! step, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario.And<TResult>(string! name, System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<TResult>!>! step, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario.Then<TValue>(string! name, System.Func<TValue, System.Threading.CancellationToken, System.Threading.Tasks.Task!>! check, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario.And<TValue>(string! name, System.Func<TValue, System.Threading.CancellationToken, System.Threading.Tasks.Task!>! check, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+static Ahr.Assurance.Execution.ScenarioSteps<TContext>.CreateActionStep<TResult>(string! name, System.Func<TContext, TResult>! execute, string? description = null) -> Ahr.Assurance.Execution.ScenarioAction<TContext>!
+static Ahr.Assurance.Execution.ScenarioSteps<TContext>.CreateActionStep<TResult>(string! name, System.Func<TContext, System.Threading.Tasks.Task<TResult>!>! execute, string? description = null) -> Ahr.Assurance.Execution.ScenarioAction<TContext>!
+static Ahr.Assurance.Execution.ScenarioSteps<TContext>.CreateActionStep<TResult>(string! name, System.Func<TContext, System.Threading.CancellationToken, System.Threading.Tasks.Task<TResult>!>! execute, string? description = null) -> Ahr.Assurance.Execution.ScenarioAction<TContext>!
+static Ahr.Assurance.Execution.ScenarioSteps<TContext>.CreateThrowsStep(string! name, System.Type! exception, System.Action<TContext>! execute, string? description = null) -> Ahr.Assurance.Execution.ScenarioAction<TContext>!
+static Ahr.Assurance.Execution.ScenarioSteps<TContext>.CreateThrowsStep(string! name, System.Type! exception, System.Func<TContext, System.Threading.Tasks.Task!>! execute, string? description = null) -> Ahr.Assurance.Execution.ScenarioAction<TContext>!
+static Ahr.Assurance.Execution.ScenarioSteps<TContext>.CreateThrowsStep(string! name, System.Type! exception, System.Func<TContext, System.Threading.CancellationToken, System.Threading.Tasks.Task!>! execute, string? description = null) -> Ahr.Assurance.Execution.ScenarioAction<TContext>!
+static Ahr.Assurance.Execution.ScenarioSteps<TContext>.CreateThrownStep<TException>(string! name, System.Func<TContext, TException!, System.Threading.CancellationToken, System.Threading.Tasks.Task!>! check, string? description = null) -> Ahr.Assurance.Execution.ScenarioExpectation<TContext>!
+static Ahr.Assurance.Execution.ScenarioSteps<TContext>.CreateReturnedStep<TResult>(string! name, System.Action<TContext, TResult>! check, string? description = null) -> Ahr.Assurance.Execution.ScenarioExpectation<TContext>!
+static Ahr.Assurance.Execution.ScenarioSteps<TContext>.CreateReturnedStep<TResult>(string! name, System.Func<TContext, TResult, System.Threading.Tasks.Task!>! check, string? description = null) -> Ahr.Assurance.Execution.ScenarioExpectation<TContext>!
+static Ahr.Assurance.Execution.ScenarioSteps<TContext>.CreateReturnedStep<TResult>(string! name, System.Func<TContext, TResult, System.Threading.CancellationToken, System.Threading.Tasks.Task!>! check, string? description = null) -> Ahr.Assurance.Execution.ScenarioExpectation<TContext>!
+static Ahr.Assurance.Execution.ScenarioSteps<TContext>.CreateThrowsStep(string! name, System.Type! exception, System.Func<TContext, object?>! execute, string? description = null) -> Ahr.Assurance.Execution.ScenarioAction<TContext>!
+static Ahr.Assurance.Execution.ScenarioSteps<TContext>.CreateThrowsStep(string! name, System.Type! exception, System.Func<TContext, System.Threading.Tasks.Task<object?>!>! execute, string? description = null) -> Ahr.Assurance.Execution.ScenarioAction<TContext>!
+Ahr.Assurance.Execution.ScenarioAction<TContext>.WithValue(object? value, string! name = "") -> Ahr.Assurance.Execution.ScenarioAction<TContext>!
+Ahr.Assurance.Execution.ScenarioExpectation<TContext>.WithValue(object? value, string! name = "") -> Ahr.Assurance.Execution.ScenarioExpectation<TContext>!
+Ahr.Assurance.Execution.Scenario.WhenThrowsAny<TException>(string! name, System.Action! action, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario.WhenThrowsAny<TException>(string! name, System.Func<System.Threading.Tasks.Task!>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario.WhenThrowsAny<TException>(string! name, System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task!>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario.AndThrowsAny<TException>(string! name, System.Action! action, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario.AndThrowsAny<TException>(string! name, System.Func<System.Threading.Tasks.Task!>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario.AndThrowsAny<TException>(string! name, System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task!>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario<TContext>.WhenThrowsAny<TException>(string! name, System.Action<TContext>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.WhenThrowsAny<TException>(string! name, System.Func<TContext, System.Threading.Tasks.Task!>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.WhenThrowsAny<TException>(string! name, System.Func<TContext, System.Threading.CancellationToken, System.Threading.Tasks.Task!>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.AndThrowsAny<TException>(string! name, System.Action<TContext>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.AndThrowsAny<TException>(string! name, System.Func<TContext, System.Threading.Tasks.Task!>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.AndThrowsAny<TException>(string! name, System.Func<TContext, System.Threading.CancellationToken, System.Threading.Tasks.Task!>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+static Ahr.Assurance.Execution.ScenarioSteps<TContext>.CreateThrowsAnyStep<TException>(string! name, System.Action<TContext>! execute, string? description = null) -> Ahr.Assurance.Execution.ScenarioAction<TContext>!
+static Ahr.Assurance.Execution.ScenarioSteps<TContext>.CreateThrowsAnyStep<TException>(string! name, System.Func<TContext, System.Threading.Tasks.Task!>! execute, string? description = null) -> Ahr.Assurance.Execution.ScenarioAction<TContext>!
+static Ahr.Assurance.Execution.ScenarioSteps<TContext>.CreateThrowsAnyStep<TException>(string! name, System.Func<TContext, System.Threading.CancellationToken, System.Threading.Tasks.Task!>! execute, string? description = null) -> Ahr.Assurance.Execution.ScenarioAction<TContext>!
+Ahr.Assurance.Execution.Scenario.WhenThrowsAny<TException>(string! name, System.Func<object?>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario.WhenThrowsAny<TException>(string! name, System.Func<System.Threading.Tasks.Task<object?>!>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario.AndThrowsAny<TException>(string! name, System.Func<object?>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario.AndThrowsAny<TException>(string! name, System.Func<System.Threading.Tasks.Task<object?>!>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario!
+Ahr.Assurance.Execution.Scenario<TContext>.WhenThrowsAny<TException>(string! name, System.Func<TContext, object?>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.WhenThrowsAny<TException>(string! name, System.Func<TContext, System.Threading.Tasks.Task<object?>!>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.AndThrowsAny<TException>(string! name, System.Func<TContext, object?>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+Ahr.Assurance.Execution.Scenario<TContext>.AndThrowsAny<TException>(string! name, System.Func<TContext, System.Threading.Tasks.Task<object?>!>! action, string? description = null) -> Ahr.Assurance.Execution.Scenario<TContext>!
+static Ahr.Assurance.Execution.ScenarioSteps<TContext>.CreateThrowsAnyStep<TException>(string! name, System.Func<TContext, object?>! execute, string? description = null) -> Ahr.Assurance.Execution.ScenarioAction<TContext>!
+static Ahr.Assurance.Execution.ScenarioSteps<TContext>.CreateThrowsAnyStep<TException>(string! name, System.Func<TContext, System.Threading.Tasks.Task<object?>!>! execute, string? description = null) -> Ahr.Assurance.Execution.ScenarioAction<TContext>!
+Ahr.Assurance.Core.AssuranceRunResult.<Clone>$() -> Ahr.Assurance.Core.AssuranceRunResult!
+Ahr.Assurance.Core.AssuranceRunResult.Deconstruct(out string! Name, out System.DateTimeOffset StartedAt, out System.TimeSpan Duration, out System.Collections.Immutable.ImmutableArray<Ahr.Assurance.Core.ScenarioResult!> Scenarios) -> void
+Ahr.Assurance.Core.AssuranceRunResult.Equals(Ahr.Assurance.Core.AssuranceRunResult? other) -> bool
+Ahr.Assurance.Core.BusinessContext.<Clone>$() -> Ahr.Assurance.Core.BusinessContext!
+Ahr.Assurance.Core.BusinessContext.Equals(Ahr.Assurance.Core.BusinessContext? other) -> bool
+Ahr.Assurance.Core.BusinessItem.BusinessItem(Ahr.Assurance.Core.BusinessItem! original) -> void
+Ahr.Assurance.Core.BusinessRule.Equals(Ahr.Assurance.Core.BusinessRule? other) -> bool
+Ahr.Assurance.Core.Capability.Equals(Ahr.Assurance.Core.Capability? other) -> bool
+Ahr.Assurance.Core.ExpectationResult.<Clone>$() -> Ahr.Assurance.Core.ExpectationResult!
+Ahr.Assurance.Core.ExpectationResult.Equals(Ahr.Assurance.Core.ExpectationResult? other) -> bool
+Ahr.Assurance.Core.ExternalReference.<Clone>$() -> Ahr.Assurance.Core.ExternalReference!
+Ahr.Assurance.Core.ExternalReference.Equals(Ahr.Assurance.Core.ExternalReference? other) -> bool
+Ahr.Assurance.Core.Objective.Equals(Ahr.Assurance.Core.Objective? other) -> bool
+Ahr.Assurance.Core.Outcome.Equals(Ahr.Assurance.Core.Outcome? other) -> bool
+Ahr.Assurance.Core.Risk.Equals(Ahr.Assurance.Core.Risk? other) -> bool
+Ahr.Assurance.Core.ScenarioResult.<Clone>$() -> Ahr.Assurance.Core.ScenarioResult!
+Ahr.Assurance.Core.ScenarioResult.Deconstruct(out string! Id, out string! Name, out Ahr.Assurance.Core.BusinessContext? Business, out System.Collections.Immutable.ImmutableArray<Ahr.Assurance.Core.StepResult!> Steps, out string? Description) -> void
+Ahr.Assurance.Core.ScenarioResult.Equals(Ahr.Assurance.Core.ScenarioResult? other) -> bool
+Ahr.Assurance.Core.StepParameter.<Clone>$() -> Ahr.Assurance.Core.StepParameter!
+Ahr.Assurance.Core.StepParameter.Deconstruct(out string! Name, out string! Value) -> void
+Ahr.Assurance.Core.StepParameter.Equals(Ahr.Assurance.Core.StepParameter? other) -> bool
+Ahr.Assurance.Core.StepResult.<Clone>$() -> Ahr.Assurance.Core.StepResult!
+Ahr.Assurance.Core.StepResult.Deconstruct(out string! Name, out Ahr.Assurance.Core.StepKind Kind, out Ahr.Assurance.Core.ExpectationResult! Evaluation, out System.TimeSpan Duration, out string? Description, out Ahr.Assurance.Core.StepKeyword? AuthoredKeyword) -> void
+Ahr.Assurance.Core.StepResult.Equals(Ahr.Assurance.Core.StepResult? other) -> bool
+Ahr.Assurance.Reporting.AssuranceArtifact.<Clone>$() -> Ahr.Assurance.Reporting.AssuranceArtifact!
+Ahr.Assurance.Reporting.AssuranceArtifact.Deconstruct(out string! Name, out string! Location) -> void
+Ahr.Assurance.Reporting.AssuranceArtifact.Equals(Ahr.Assurance.Reporting.AssuranceArtifact? other) -> bool
+Ahr.Assurance.Reporting.AssuranceReport.<Clone>$() -> Ahr.Assurance.Reporting.AssuranceReport!
+Ahr.Assurance.Reporting.AssuranceReport.Deconstruct(out Ahr.Assurance.Core.AssuranceRunResult! Run, out System.Collections.Immutable.ImmutableArray<Ahr.Assurance.Reporting.ReportDiagnostic!> Diagnostics, out System.Collections.Immutable.ImmutableArray<Ahr.Assurance.Reporting.AssuranceArtifact!> Artifacts) -> void
+Ahr.Assurance.Reporting.AssuranceReport.Equals(Ahr.Assurance.Reporting.AssuranceReport? other) -> bool
+Ahr.Assurance.Reporting.AssuranceVerificationResult.<Clone>$() -> Ahr.Assurance.Reporting.AssuranceVerificationResult!
+Ahr.Assurance.Reporting.AssuranceVerificationResult.Deconstruct(out Ahr.Assurance.Core.AssuranceRunResult! Run, out System.Collections.Immutable.ImmutableArray<Ahr.Assurance.Reporting.AssuranceArtifact!> Artifacts) -> void
+Ahr.Assurance.Reporting.AssuranceVerificationResult.Equals(Ahr.Assurance.Reporting.AssuranceVerificationResult? other) -> bool
+Ahr.Assurance.Reporting.EvidenceAttachment.<Clone>$() -> Ahr.Assurance.Reporting.EvidenceAttachment!
+Ahr.Assurance.Reporting.EvidenceAttachment.Deconstruct(out string! Id, out string! Name, out string! MediaType, out string! Reference, out string? ScenarioId, out int? StepIndex, out bool Available, out bool DetailsWithheld) -> void
+Ahr.Assurance.Reporting.EvidenceAttachment.Equals(Ahr.Assurance.Reporting.EvidenceAttachment? other) -> bool
+Ahr.Assurance.Reporting.EvidenceDeliveryContext.<Clone>$() -> Ahr.Assurance.Reporting.EvidenceDeliveryContext!
+Ahr.Assurance.Reporting.EvidenceDeliveryContext.Deconstruct(out string! DefaultOutputDirectory) -> void
+Ahr.Assurance.Reporting.EvidenceDeliveryContext.Equals(Ahr.Assurance.Reporting.EvidenceDeliveryContext? other) -> bool
+Ahr.Assurance.Reporting.EvidenceDeliveryResult.<Clone>$() -> Ahr.Assurance.Reporting.EvidenceDeliveryResult!
+Ahr.Assurance.Reporting.EvidenceDeliveryResult.Deconstruct(out System.Collections.Immutable.ImmutableArray<Ahr.Assurance.Reporting.AssuranceArtifact!> Artifacts, out System.Collections.Immutable.ImmutableArray<Ahr.Assurance.Reporting.ReportDiagnostic!> Diagnostics) -> void
+Ahr.Assurance.Reporting.EvidenceDeliveryResult.Equals(Ahr.Assurance.Reporting.EvidenceDeliveryResult? other) -> bool
+Ahr.Assurance.Reporting.HtmlReportSinkOptions.<Clone>$() -> Ahr.Assurance.Reporting.HtmlReportSinkOptions!
+Ahr.Assurance.Reporting.HtmlReportSinkOptions.Equals(Ahr.Assurance.Reporting.HtmlReportSinkOptions? other) -> bool
+Ahr.Assurance.Reporting.HtmlReportSinkOptions.HtmlReportSinkOptions() -> void
+Ahr.Assurance.Reporting.JsonReportSinkOptions.<Clone>$() -> Ahr.Assurance.Reporting.JsonReportSinkOptions!
+Ahr.Assurance.Reporting.JsonReportSinkOptions.Equals(Ahr.Assurance.Reporting.JsonReportSinkOptions? other) -> bool
+Ahr.Assurance.Reporting.JsonReportSinkOptions.JsonReportSinkOptions() -> void
+Ahr.Assurance.Reporting.ReportDiagnostic.<Clone>$() -> Ahr.Assurance.Reporting.ReportDiagnostic!
+Ahr.Assurance.Reporting.ReportDiagnostic.Deconstruct(out string! Code, out string! Message, out string? ExceptionType, out bool DetailsWithheld) -> void
+Ahr.Assurance.Reporting.ReportDiagnostic.Equals(Ahr.Assurance.Reporting.ReportDiagnostic? other) -> bool
+Ahr.Assurance.Reporting.ReportOptions.<Clone>$() -> Ahr.Assurance.Reporting.ReportOptions!
+Ahr.Assurance.Reporting.ReportOptions.Equals(Ahr.Assurance.Reporting.ReportOptions? other) -> bool
+Ahr.Assurance.Reporting.ReportOptions.ReportOptions() -> void
+Ahr.Assurance.Reporting.VerificationEvidence.<Clone>$() -> Ahr.Assurance.Reporting.VerificationEvidence!
+Ahr.Assurance.Reporting.VerificationEvidence.Deconstruct(out string! VerificationId, out string! CorrelationId, out string! Producer, out string? TestId, out string? TestName, out Ahr.Assurance.Reporting.VerificationExecutionState ExecutionState, out Ahr.Assurance.Reporting.AssuranceReport! Report, out System.Collections.Immutable.ImmutableArray<Ahr.Assurance.Reporting.EvidenceAttachment!> Attachments) -> void
+Ahr.Assurance.Reporting.VerificationEvidence.Equals(Ahr.Assurance.Reporting.VerificationEvidence? other) -> bool
+abstract Ahr.Assurance.Core.BusinessItem.<Clone>$() -> Ahr.Assurance.Core.BusinessItem!
+override Ahr.Assurance.Core.AssuranceRunResult.Equals(object? obj) -> bool
+override Ahr.Assurance.Core.AssuranceRunResult.GetHashCode() -> int
+override Ahr.Assurance.Core.AssuranceRunResult.ToString() -> string!
+override Ahr.Assurance.Core.BusinessContext.Equals(object? obj) -> bool
+override Ahr.Assurance.Core.BusinessContext.GetHashCode() -> int
+override Ahr.Assurance.Core.BusinessContext.ToString() -> string!
+override Ahr.Assurance.Core.BusinessItem.Equals(object? obj) -> bool
+override Ahr.Assurance.Core.BusinessItem.GetHashCode() -> int
+override Ahr.Assurance.Core.BusinessItem.ToString() -> string!
+override Ahr.Assurance.Core.BusinessRule.<Clone>$() -> Ahr.Assurance.Core.BusinessRule!
+override Ahr.Assurance.Core.BusinessRule.Equals(object? obj) -> bool
+override Ahr.Assurance.Core.BusinessRule.GetHashCode() -> int
+override Ahr.Assurance.Core.BusinessRule.ToString() -> string!
+override Ahr.Assurance.Core.Capability.<Clone>$() -> Ahr.Assurance.Core.Capability!
+override Ahr.Assurance.Core.Capability.Equals(object? obj) -> bool
+override Ahr.Assurance.Core.Capability.GetHashCode() -> int
+override Ahr.Assurance.Core.Capability.ToString() -> string!
+override Ahr.Assurance.Core.ExpectationResult.Equals(object? obj) -> bool
+override Ahr.Assurance.Core.ExpectationResult.GetHashCode() -> int
+override Ahr.Assurance.Core.ExpectationResult.ToString() -> string!
+override Ahr.Assurance.Core.ExternalReference.Equals(object? obj) -> bool
+override Ahr.Assurance.Core.ExternalReference.GetHashCode() -> int
+override Ahr.Assurance.Core.ExternalReference.ToString() -> string!
+override Ahr.Assurance.Core.Objective.<Clone>$() -> Ahr.Assurance.Core.Objective!
+override Ahr.Assurance.Core.Objective.Equals(object? obj) -> bool
+override Ahr.Assurance.Core.Objective.GetHashCode() -> int
+override Ahr.Assurance.Core.Objective.ToString() -> string!
+override Ahr.Assurance.Core.Outcome.<Clone>$() -> Ahr.Assurance.Core.Outcome!
+override Ahr.Assurance.Core.Outcome.Equals(object? obj) -> bool
+override Ahr.Assurance.Core.Outcome.GetHashCode() -> int
+override Ahr.Assurance.Core.Outcome.ToString() -> string!
+override Ahr.Assurance.Core.Risk.<Clone>$() -> Ahr.Assurance.Core.Risk!
+override Ahr.Assurance.Core.Risk.Equals(object? obj) -> bool
+override Ahr.Assurance.Core.Risk.GetHashCode() -> int
+override Ahr.Assurance.Core.Risk.ToString() -> string!
+override Ahr.Assurance.Core.ScenarioResult.Equals(object? obj) -> bool
+override Ahr.Assurance.Core.ScenarioResult.GetHashCode() -> int
+override Ahr.Assurance.Core.ScenarioResult.ToString() -> string!
+override Ahr.Assurance.Core.StepParameter.Equals(object? obj) -> bool
+override Ahr.Assurance.Core.StepParameter.GetHashCode() -> int
+override Ahr.Assurance.Core.StepParameter.ToString() -> string!
+override Ahr.Assurance.Core.StepResult.Equals(object? obj) -> bool
+override Ahr.Assurance.Core.StepResult.GetHashCode() -> int
+override Ahr.Assurance.Core.StepResult.ToString() -> string!
+override Ahr.Assurance.Reporting.AssuranceArtifact.Equals(object? obj) -> bool
+override Ahr.Assurance.Reporting.AssuranceArtifact.GetHashCode() -> int
+override Ahr.Assurance.Reporting.AssuranceArtifact.ToString() -> string!
+override Ahr.Assurance.Reporting.AssuranceReport.Equals(object? obj) -> bool
+override Ahr.Assurance.Reporting.AssuranceReport.GetHashCode() -> int
+override Ahr.Assurance.Reporting.AssuranceReport.ToString() -> string!
+override Ahr.Assurance.Reporting.AssuranceVerificationResult.Equals(object? obj) -> bool
+override Ahr.Assurance.Reporting.AssuranceVerificationResult.GetHashCode() -> int
+override Ahr.Assurance.Reporting.AssuranceVerificationResult.ToString() -> string!
+override Ahr.Assurance.Reporting.EvidenceAttachment.Equals(object? obj) -> bool
+override Ahr.Assurance.Reporting.EvidenceAttachment.GetHashCode() -> int
+override Ahr.Assurance.Reporting.EvidenceAttachment.ToString() -> string!
+override Ahr.Assurance.Reporting.EvidenceDeliveryContext.Equals(object? obj) -> bool
+override Ahr.Assurance.Reporting.EvidenceDeliveryContext.GetHashCode() -> int
+override Ahr.Assurance.Reporting.EvidenceDeliveryContext.ToString() -> string!
+override Ahr.Assurance.Reporting.EvidenceDeliveryResult.Equals(object? obj) -> bool
+override Ahr.Assurance.Reporting.EvidenceDeliveryResult.GetHashCode() -> int
+override Ahr.Assurance.Reporting.EvidenceDeliveryResult.ToString() -> string!
+override Ahr.Assurance.Reporting.HtmlReportSinkOptions.Equals(object? obj) -> bool
+override Ahr.Assurance.Reporting.HtmlReportSinkOptions.GetHashCode() -> int
+override Ahr.Assurance.Reporting.HtmlReportSinkOptions.ToString() -> string!
+override Ahr.Assurance.Reporting.JsonReportSinkOptions.Equals(object? obj) -> bool
+override Ahr.Assurance.Reporting.JsonReportSinkOptions.GetHashCode() -> int
+override Ahr.Assurance.Reporting.JsonReportSinkOptions.ToString() -> string!
+override Ahr.Assurance.Reporting.ReportDiagnostic.Equals(object? obj) -> bool
+override Ahr.Assurance.Reporting.ReportDiagnostic.GetHashCode() -> int
+override Ahr.Assurance.Reporting.ReportDiagnostic.ToString() -> string!
+override Ahr.Assurance.Reporting.ReportOptions.Equals(object? obj) -> bool
+override Ahr.Assurance.Reporting.ReportOptions.GetHashCode() -> int
+override Ahr.Assurance.Reporting.ReportOptions.ToString() -> string!
+override Ahr.Assurance.Reporting.VerificationEvidence.Equals(object? obj) -> bool
+override Ahr.Assurance.Reporting.VerificationEvidence.GetHashCode() -> int
+override Ahr.Assurance.Reporting.VerificationEvidence.ToString() -> string!
+override sealed Ahr.Assurance.Core.BusinessRule.Equals(Ahr.Assurance.Core.BusinessItem? other) -> bool
+override sealed Ahr.Assurance.Core.Capability.Equals(Ahr.Assurance.Core.BusinessItem? other) -> bool
+override sealed Ahr.Assurance.Core.Objective.Equals(Ahr.Assurance.Core.BusinessItem? other) -> bool
+override sealed Ahr.Assurance.Core.Outcome.Equals(Ahr.Assurance.Core.BusinessItem? other) -> bool
+override sealed Ahr.Assurance.Core.Risk.Equals(Ahr.Assurance.Core.BusinessItem? other) -> bool
+static Ahr.Assurance.Core.AssuranceRunResult.operator !=(Ahr.Assurance.Core.AssuranceRunResult? left, Ahr.Assurance.Core.AssuranceRunResult? right) -> bool
+static Ahr.Assurance.Core.AssuranceRunResult.operator ==(Ahr.Assurance.Core.AssuranceRunResult? left, Ahr.Assurance.Core.AssuranceRunResult? right) -> bool
+static Ahr.Assurance.Core.BusinessContext.operator !=(Ahr.Assurance.Core.BusinessContext? left, Ahr.Assurance.Core.BusinessContext? right) -> bool
+static Ahr.Assurance.Core.BusinessContext.operator ==(Ahr.Assurance.Core.BusinessContext? left, Ahr.Assurance.Core.BusinessContext? right) -> bool
+static Ahr.Assurance.Core.BusinessItem.operator !=(Ahr.Assurance.Core.BusinessItem? left, Ahr.Assurance.Core.BusinessItem? right) -> bool
+static Ahr.Assurance.Core.BusinessItem.operator ==(Ahr.Assurance.Core.BusinessItem? left, Ahr.Assurance.Core.BusinessItem? right) -> bool
+static Ahr.Assurance.Core.BusinessRule.operator !=(Ahr.Assurance.Core.BusinessRule? left, Ahr.Assurance.Core.BusinessRule? right) -> bool
+static Ahr.Assurance.Core.BusinessRule.operator ==(Ahr.Assurance.Core.BusinessRule? left, Ahr.Assurance.Core.BusinessRule? right) -> bool
+static Ahr.Assurance.Core.Capability.operator !=(Ahr.Assurance.Core.Capability? left, Ahr.Assurance.Core.Capability? right) -> bool
+static Ahr.Assurance.Core.Capability.operator ==(Ahr.Assurance.Core.Capability? left, Ahr.Assurance.Core.Capability? right) -> bool
+static Ahr.Assurance.Core.ExpectationResult.operator !=(Ahr.Assurance.Core.ExpectationResult? left, Ahr.Assurance.Core.ExpectationResult? right) -> bool
+static Ahr.Assurance.Core.ExpectationResult.operator ==(Ahr.Assurance.Core.ExpectationResult? left, Ahr.Assurance.Core.ExpectationResult? right) -> bool
+static Ahr.Assurance.Core.ExternalReference.operator !=(Ahr.Assurance.Core.ExternalReference? left, Ahr.Assurance.Core.ExternalReference? right) -> bool
+static Ahr.Assurance.Core.ExternalReference.operator ==(Ahr.Assurance.Core.ExternalReference? left, Ahr.Assurance.Core.ExternalReference? right) -> bool
+static Ahr.Assurance.Core.Objective.operator !=(Ahr.Assurance.Core.Objective? left, Ahr.Assurance.Core.Objective? right) -> bool
+static Ahr.Assurance.Core.Objective.operator ==(Ahr.Assurance.Core.Objective? left, Ahr.Assurance.Core.Objective? right) -> bool
+static Ahr.Assurance.Core.Outcome.operator !=(Ahr.Assurance.Core.Outcome? left, Ahr.Assurance.Core.Outcome? right) -> bool
+static Ahr.Assurance.Core.Outcome.operator ==(Ahr.Assurance.Core.Outcome? left, Ahr.Assurance.Core.Outcome? right) -> bool
+static Ahr.Assurance.Core.Risk.operator !=(Ahr.Assurance.Core.Risk? left, Ahr.Assurance.Core.Risk? right) -> bool
+static Ahr.Assurance.Core.Risk.operator ==(Ahr.Assurance.Core.Risk? left, Ahr.Assurance.Core.Risk? right) -> bool
+static Ahr.Assurance.Core.ScenarioResult.operator !=(Ahr.Assurance.Core.ScenarioResult? left, Ahr.Assurance.Core.ScenarioResult? right) -> bool
+static Ahr.Assurance.Core.ScenarioResult.operator ==(Ahr.Assurance.Core.ScenarioResult? left, Ahr.Assurance.Core.ScenarioResult? right) -> bool
+static Ahr.Assurance.Core.StepParameter.operator !=(Ahr.Assurance.Core.StepParameter? left, Ahr.Assurance.Core.StepParameter? right) -> bool
+static Ahr.Assurance.Core.StepParameter.operator ==(Ahr.Assurance.Core.StepParameter? left, Ahr.Assurance.Core.StepParameter? right) -> bool
+static Ahr.Assurance.Core.StepResult.operator !=(Ahr.Assurance.Core.StepResult? left, Ahr.Assurance.Core.StepResult? right) -> bool
+static Ahr.Assurance.Core.StepResult.operator ==(Ahr.Assurance.Core.StepResult? left, Ahr.Assurance.Core.StepResult? right) -> bool
+static Ahr.Assurance.Reporting.AssuranceArtifact.operator !=(Ahr.Assurance.Reporting.AssuranceArtifact? left, Ahr.Assurance.Reporting.AssuranceArtifact? right) -> bool
+static Ahr.Assurance.Reporting.AssuranceArtifact.operator ==(Ahr.Assurance.Reporting.AssuranceArtifact? left, Ahr.Assurance.Reporting.AssuranceArtifact? right) -> bool
+static Ahr.Assurance.Reporting.AssuranceReport.operator !=(Ahr.Assurance.Reporting.AssuranceReport? left, Ahr.Assurance.Reporting.AssuranceReport? right) -> bool
+static Ahr.Assurance.Reporting.AssuranceReport.operator ==(Ahr.Assurance.Reporting.AssuranceReport? left, Ahr.Assurance.Reporting.AssuranceReport? right) -> bool
+static Ahr.Assurance.Reporting.AssuranceVerificationResult.operator !=(Ahr.Assurance.Reporting.AssuranceVerificationResult? left, Ahr.Assurance.Reporting.AssuranceVerificationResult? right) -> bool
+static Ahr.Assurance.Reporting.AssuranceVerificationResult.operator ==(Ahr.Assurance.Reporting.AssuranceVerificationResult? left, Ahr.Assurance.Reporting.AssuranceVerificationResult? right) -> bool
+static Ahr.Assurance.Reporting.EvidenceAttachment.operator !=(Ahr.Assurance.Reporting.EvidenceAttachment? left, Ahr.Assurance.Reporting.EvidenceAttachment? right) -> bool
+static Ahr.Assurance.Reporting.EvidenceAttachment.operator ==(Ahr.Assurance.Reporting.EvidenceAttachment? left, Ahr.Assurance.Reporting.EvidenceAttachment? right) -> bool
+static Ahr.Assurance.Reporting.EvidenceDeliveryContext.operator !=(Ahr.Assurance.Reporting.EvidenceDeliveryContext? left, Ahr.Assurance.Reporting.EvidenceDeliveryContext? right) -> bool
+static Ahr.Assurance.Reporting.EvidenceDeliveryContext.operator ==(Ahr.Assurance.Reporting.EvidenceDeliveryContext? left, Ahr.Assurance.Reporting.EvidenceDeliveryContext? right) -> bool
+static Ahr.Assurance.Reporting.EvidenceDeliveryResult.operator !=(Ahr.Assurance.Reporting.EvidenceDeliveryResult? left, Ahr.Assurance.Reporting.EvidenceDeliveryResult? right) -> bool
+static Ahr.Assurance.Reporting.EvidenceDeliveryResult.operator ==(Ahr.Assurance.Reporting.EvidenceDeliveryResult? left, Ahr.Assurance.Reporting.EvidenceDeliveryResult? right) -> bool
+static Ahr.Assurance.Reporting.HtmlReportSinkOptions.operator !=(Ahr.Assurance.Reporting.HtmlReportSinkOptions? left, Ahr.Assurance.Reporting.HtmlReportSinkOptions? right) -> bool
+static Ahr.Assurance.Reporting.HtmlReportSinkOptions.operator ==(Ahr.Assurance.Reporting.HtmlReportSinkOptions? left, Ahr.Assurance.Reporting.HtmlReportSinkOptions? right) -> bool
+static Ahr.Assurance.Reporting.JsonReportSinkOptions.operator !=(Ahr.Assurance.Reporting.JsonReportSinkOptions? left, Ahr.Assurance.Reporting.JsonReportSinkOptions? right) -> bool
+static Ahr.Assurance.Reporting.JsonReportSinkOptions.operator ==(Ahr.Assurance.Reporting.JsonReportSinkOptions? left, Ahr.Assurance.Reporting.JsonReportSinkOptions? right) -> bool
+static Ahr.Assurance.Reporting.ReportDiagnostic.operator !=(Ahr.Assurance.Reporting.ReportDiagnostic? left, Ahr.Assurance.Reporting.ReportDiagnostic? right) -> bool
+static Ahr.Assurance.Reporting.ReportDiagnostic.operator ==(Ahr.Assurance.Reporting.ReportDiagnostic? left, Ahr.Assurance.Reporting.ReportDiagnostic? right) -> bool
+static Ahr.Assurance.Reporting.ReportOptions.operator !=(Ahr.Assurance.Reporting.ReportOptions? left, Ahr.Assurance.Reporting.ReportOptions? right) -> bool
+static Ahr.Assurance.Reporting.ReportOptions.operator ==(Ahr.Assurance.Reporting.ReportOptions? left, Ahr.Assurance.Reporting.ReportOptions? right) -> bool
+static Ahr.Assurance.Reporting.VerificationEvidence.operator !=(Ahr.Assurance.Reporting.VerificationEvidence? left, Ahr.Assurance.Reporting.VerificationEvidence? right) -> bool
+static Ahr.Assurance.Reporting.VerificationEvidence.operator ==(Ahr.Assurance.Reporting.VerificationEvidence? left, Ahr.Assurance.Reporting.VerificationEvidence? right) -> bool
+virtual Ahr.Assurance.Core.BusinessItem.EqualityContract.get -> System.Type!
+virtual Ahr.Assurance.Core.BusinessItem.Equals(Ahr.Assurance.Core.BusinessItem? other) -> bool
+virtual Ahr.Assurance.Core.BusinessItem.PrintMembers(System.Text.StringBuilder! builder) -> bool

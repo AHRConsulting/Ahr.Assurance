@@ -1,0 +1,6 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <PackageReference Include="Ahr.Assurance" />
+    <None Include="Screens/*.png" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

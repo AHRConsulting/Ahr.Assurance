@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- The MSTest adapter for MSTest 3: Ahr.Assurance.MSTest's source, built against the oldest MSTest 3. Tests pass their TestContext. -->
+  <PropertyGroup>
+    <IsPackable>true</IsPackable>
+    <RootNamespace>Ahr.Assurance.MSTest</RootNamespace>
+    <Description>MSTest 3 adapter for Ahr.Assurance: named Given/When/Then steps over ordinary MSTest tests, with evidence linked to business outcomes, rules and risks.</Description>
+    <DefineConstants>$(DefineConstants);MSTEST3</DefineConstants>
+    <NoWarn>$(NoWarn);RS0026;RS0027</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="Ahr.Assurance.MSTest.v3.Tests" />
+    <ProjectReference Include="../../../Ahr.Assurance/Ahr.Assurance.csproj" />
+    <PackageReference Include="MSTest.TestFramework" VersionOverride="3.0.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.PublicApiAnalyzers" PrivateAssets="all" />
+    <Compile Include="../Ahr.Assurance.MSTest/*.cs" Link="%(Filename)%(Extension)" />
+    <Using Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
+    <AdditionalFiles Include="PublicAPI.Shipped.txt" />
+    <AdditionalFiles Include="PublicAPI.Unshipped.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="buildTransitive/Ahr.Assurance.MSTest.v3.targets" Pack="true" PackagePath="buildTransitive/" />
+    <!-- The Microsoft.Testing.Platform extension, built for each platform major version. -->
+    <ProjectReference Include="../../../Ahr.Assurance.TestingPlatform/v1/Ahr.Assurance.TestingPlatform.v1.csproj" ReferenceOutputAssembly="false" PrivateAssets="all" />
+    <ProjectReference Include="../../../Ahr.Assurance.TestingPlatform/v2/Ahr.Assurance.TestingPlatform.v2.csproj" ReferenceOutputAssembly="false" PrivateAssets="all" />
+    <None Include="../../../Ahr.Assurance.TestingPlatform/Ahr.Assurance.TestingPlatform.targets" Pack="true" PackagePath="buildTransitive/" Visible="false" />
+    <None Include="../../../Ahr.Assurance.TestingPlatform/bin/$(Configuration)/v1/Ahr.Assurance.TestingPlatform.dll" Pack="true" PackagePath="buildTransitive/platform/v1/" Visible="false" />
+    <None Include="../../../Ahr.Assurance.TestingPlatform/bin/$(Configuration)/v2/Ahr.Assurance.TestingPlatform.dll" Pack="true" PackagePath="buildTransitive/platform/v2/" Visible="false" />
+  </ItemGroup>
+</Project>

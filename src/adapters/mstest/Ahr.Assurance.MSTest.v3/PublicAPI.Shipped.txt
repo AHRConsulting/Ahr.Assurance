@@ -1,0 +1,12 @@
+#nullable enable
+Ahr.Assurance.MSTest.AssuranceAssert
+Ahr.Assurance.MSTest.AssuranceMSTestConfiguration
+Ahr.Assurance.MSTest.InlineScenarioExtensions
+Ahr.Assurance.MSTest.ScenarioVerificationExtensions
+static Ahr.Assurance.MSTest.AssuranceMSTestConfiguration.ConfigureDefault(Ahr.Assurance.Reporting.ReportOptions! reportOptions) -> void
+static Ahr.Assurance.MSTest.AssuranceAssert.VerifyAsync<TContext>(string! name, System.Collections.Generic.IEnumerable<Ahr.Assurance.Execution.Scenario<TContext>!>! scenarios, Microsoft.VisualStudio.TestTools.UnitTesting.TestContext! testContext) -> System.Threading.Tasks.Task<Ahr.Assurance.Reporting.AssuranceVerificationResult!>!
+static Ahr.Assurance.MSTest.AssuranceAssert.VerifyAsync<TContext>(string! name, System.Collections.Generic.IEnumerable<Ahr.Assurance.Execution.Scenario<TContext>!>! scenarios, Microsoft.VisualStudio.TestTools.UnitTesting.TestContext! testContext, Ahr.Assurance.Reporting.ReportOptions! reportOptions) -> System.Threading.Tasks.Task<Ahr.Assurance.Reporting.AssuranceVerificationResult!>!
+static Ahr.Assurance.MSTest.InlineScenarioExtensions.VerifyAsync(this Ahr.Assurance.Execution.Scenario! scenario, Microsoft.VisualStudio.TestTools.UnitTesting.TestContext! testContext) -> System.Threading.Tasks.Task<Ahr.Assurance.Reporting.AssuranceVerificationResult!>!
+static Ahr.Assurance.MSTest.InlineScenarioExtensions.VerifyAsync(this Ahr.Assurance.Execution.Scenario! scenario, Microsoft.VisualStudio.TestTools.UnitTesting.TestContext! testContext, Ahr.Assurance.Reporting.ReportOptions! reportOptions) -> System.Threading.Tasks.Task<Ahr.Assurance.Reporting.AssuranceVerificationResult!>!
+static Ahr.Assurance.MSTest.ScenarioVerificationExtensions.VerifyAsync<TContext>(this Ahr.Assurance.Execution.Scenario<TContext>! scenario, Microsoft.VisualStudio.TestTools.UnitTesting.TestContext! testContext) -> System.Threading.Tasks.Task<Ahr.Assurance.Reporting.AssuranceVerificationResult!>!
+static Ahr.Assurance.MSTest.ScenarioVerificationExtensions.VerifyAsync<TContext>(this Ahr.Assurance.Execution.Scenario<TContext>! scenario, Microsoft.VisualStudio.TestTools.UnitTesting.TestContext! testContext, Ahr.Assurance.Reporting.ReportOptions! reportOptions) -> System.Threading.Tasks.Task<Ahr.Assurance.Reporting.AssuranceVerificationResult!>!

@@ -1,0 +1,33 @@
+<Project>
+  <!-- In this repository, the samples build against the libraries' source: each Ahr.Assurance package reference becomes a
+       reference to its project, with the analyzers and build files the package brings. A copy outside the repository uses
+       the packages. -->
+  <PropertyGroup>
+    <_AhrAssuranceSource>$(MSBuildThisFileDirectory)../src/</_AhrAssuranceSource>
+    <_AhrAssuranceFromSource Condition="Exists('$(_AhrAssuranceSource)Ahr.Assurance/Ahr.Assurance.csproj')">true</_AhrAssuranceFromSource>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(_AhrAssuranceFromSource)' == 'true'">
+    <_AhrAssurancePackage Include="Ahr.Assurance" Source="$(_AhrAssuranceSource)Ahr.Assurance/Ahr.Assurance.csproj" />
+    <_AhrAssurancePackage Include="Ahr.Assurance.Xunit.v3" Source="$(_AhrAssuranceSource)adapters/xunit/Ahr.Assurance.Xunit.v3/Ahr.Assurance.Xunit.v3.csproj" Namespace="Ahr.Assurance.Xunit" />
+    <_AhrAssurancePackage Include="Ahr.Assurance.Xunit.v2" Source="$(_AhrAssuranceSource)adapters/xunit/Ahr.Assurance.Xunit.v2/Ahr.Assurance.Xunit.v2.csproj" Namespace="Ahr.Assurance.Xunit" />
+    <_AhrAssurancePackage Include="Ahr.Assurance.NUnit" Source="$(_AhrAssuranceSource)adapters/nunit/Ahr.Assurance.NUnit/Ahr.Assurance.NUnit.csproj" Namespace="Ahr.Assurance.NUnit" />
+    <_AhrAssurancePackage Include="Ahr.Assurance.MSTest" Source="$(_AhrAssuranceSource)adapters/mstest/Ahr.Assurance.MSTest/Ahr.Assurance.MSTest.csproj" Namespace="Ahr.Assurance.MSTest" />
+    <_AhrAssurancePackage Include="Ahr.Assurance.MSTest.v3" Source="$(_AhrAssuranceSource)adapters/mstest/Ahr.Assurance.MSTest.v3/Ahr.Assurance.MSTest.v3.csproj" Namespace="Ahr.Assurance.MSTest" />
+    <_AhrAssurancePackage Include="Ahr.Assurance.TUnit" Source="$(_AhrAssuranceSource)adapters/tunit/Ahr.Assurance.TUnit/Ahr.Assurance.TUnit.csproj" Namespace="Ahr.Assurance.TUnit" />
+    <_AhrAssurancePackage Include="Ahr.Assurance.Playwright" Source="$(_AhrAssuranceSource)adapters/playwright/Ahr.Assurance.Playwright/Ahr.Assurance.Playwright.csproj" />
+    <_AhrAssuranceUnused Include="@(_AhrAssurancePackage)" Exclude="@(PackageReference)" />
+    <_AhrAssuranceUsed Include="@(_AhrAssurancePackage)" Exclude="@(_AhrAssuranceUnused)" />
+    <PackageReference Remove="@(_AhrAssuranceUsed)" MatchOnMetadata="Identity" />
+    <ProjectReference Include="@(_AhrAssuranceUsed->'%(Source)')" />
+    <ProjectReference Include="$(MSBuildThisFileDirectory)../analyzers/Ahr.Assurance.Analyzers/Ahr.Assurance.Analyzers.csproj" ReferenceOutputAssembly="false" OutputItemType="Analyzer" />
+    <Using Include="@(_AhrAssuranceUsed->'%(Namespace)')" Condition="'$(ImplicitUsings)' == 'enable' Or '$(ImplicitUsings)' == 'true'" />
+  </ItemGroup>
+  <Import Project="$(_AhrAssuranceSource)Ahr.Assurance/buildTransitive/Ahr.Assurance.targets" Condition="'$(_AhrAssuranceFromSource)' == 'true'" />
+  <PropertyGroup Condition="'$(_AhrAssuranceFromSource)' == 'true' And '$(TestingPlatformDotnetTestSupport)' != 'true'">
+    <IsTestProject>false</IsTestProject>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(_AhrAssuranceFromSource)' == 'true' And '$(IsTestProject)' == 'true'">
+    <AhrAssuranceTestingPlatformDirectory>$(_AhrAssuranceSource)Ahr.Assurance.TestingPlatform/bin/$(Configuration)/</AhrAssuranceTestingPlatformDirectory>
+  </PropertyGroup>
+  <Import Project="$(_AhrAssuranceSource)Ahr.Assurance.TestingPlatform/Ahr.Assurance.TestingPlatform.targets" Condition="'$(_AhrAssuranceFromSource)' == 'true' And '$(IsTestProject)' == 'true'" />
+</Project>
