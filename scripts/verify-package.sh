@@ -3,10 +3,10 @@
 # Usage: scripts/verify-package.sh [work-directory]
 set -euo pipefail
 
-REPO="$(cd "$(dirname "$0")/.." && pwd)"
+REPO="$(cd "$(dirname "$0")/.." && pwd -P)"
 # A folder of your own is kept. A temporary one is removed when every check passes, and kept to inspect when one fails.
 KEEP_WORK="${1:+yes}"
-WORK="${1:-$(cd "$(mktemp -d)" && pwd -P)}"
+WORK="$(work="${1:-$(mktemp -d)}" && mkdir -p "$work" && cd "$work" && pwd -P)"
 VERSION="$(sed -n 's:.*<AhrAssuranceVersion [^>]*>\(.*\)</AhrAssuranceVersion>.*:\1:p' "$REPO/Directory.Build.props")"
 central_version() {
   sed -n "s:.*Include=\"$1\" Version=\"\([^\"]*\)\".*:\1:p" "$REPO/Directory.Packages.props"
@@ -15,8 +15,6 @@ FEED="$WORK/feed"
 BASE="$WORK/base"
 PACKAGES=(Ahr.Assurance Ahr.Assurance.Xunit.v3 Ahr.Assurance.Xunit.v2 Ahr.Assurance.NUnit Ahr.Assurance.MSTest Ahr.Assurance.MSTest.v3 Ahr.Assurance.TUnit Ahr.Assurance.Playwright Ahr.Assurance.Cli)
 FRAMEWORKS=(Xunit.v3 Xunit.v2 NUnit MSTest MSTest.v3 TUnit)
-export NUGET_PACKAGES="$WORK/packages"
-export DOTNET_CLI_HOME="$WORK/cli-home"
 export DOTNET_NOLOGO=1
 export DOTNET_SKIP_FIRST_TIME_EXPERIENCE=1
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
@@ -127,6 +125,10 @@ FOUNDATION_VERSION="$(sed -n 's:.*<AhrFoundationVersion[^>]*>\([^<]*\)<.*:\1:p' 
 check "Ahr.Assurance depends on Ahr.Foundation" "$(echo "$CORE_NUSPEC" | grep -c "id=\"Ahr.Foundation\" version=\"$FOUNDATION_VERSION\"")" 1
 check "Ahr.Foundation's analyzers stay out of consumers" "$(echo "$CORE_NUSPEC" | grep 'id="Ahr.Foundation"' | grep -c 'exclude="[^"]*Analyzers')" 1
 check "the core package carries the analyzers" "$(unzip -l "$FEED/Ahr.Assurance.$VERSION.nupkg" | grep -c ' analyzers/dotnet/cs/Ahr.Assurance.Analyzers.dll$')" 1
+
+# The repository packs from its own restore. The consumer copies below restore into their own package and tool folders.
+export NUGET_PACKAGES="$WORK/packages"
+export DOTNET_CLI_HOME="$WORK/cli-home"
 
 cat > "$BASE/nuget.config" <<XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -491,6 +493,15 @@ check "NUnit3TestAdapter 5 runs on platform 1.x" "$(grep -q '"Microsoft.Testing.
 older_versions "NUnit 5" NUnit NUnit 5.0.0
 PROJECT_EDIT='s|"MSTest" VersionOverride="3.11.1"|"MSTest" VersionOverride="4.0.0"|; s|"Ahr.Assurance.MSTest.v3"|"Ahr.Assurance.MSTest"|' older_versions "MSTest 4.0 with TestContext" MSTest.v3
 older_versions "xUnit v3 3.2" Xunit.v3 xunit.v3 3.2.2 Microsoft.Testing.Extensions.TrxReport 1.9.1
+
+restore_outputs() {
+  find "$REPO" -path "$WORK" -prune -o \( -name project.assets.json -o -name '*.nuget.g.props' \) -print
+}
+restores_in_work() {
+  { find "$REPO" -path "$WORK" -prune -o \( -name project.assets.json -o -name '*.nuget.g.props' \) -exec grep -lF -- "$WORK" {} + || true; } | wc -l | tr -d ' '
+}
+check "the repository has restore outputs" "$([ "$(restore_outputs | wc -l)" -gt 0 ] && echo yes || echo no)" yes
+check "the repository's restore stays out of the work folder" "$(restores_in_work)" 0
 
 echo
 if [ "$FAILED" -eq 0 ] && [ -z "$KEEP_WORK" ]; then
